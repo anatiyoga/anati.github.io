@@ -1,34 +1,28 @@
 /* Header Section */
 header {
-  background: linear-gradient(90deg, #FBEFE1, #FFF9F4); /* Soft gradient to match logo tones */
-  color: #3E312B; /* Soft brown matching the logo */
-  padding: 1rem 0;
+  background: #F9F3EB; /* Light beige background for simplicity */
+  color: #02172C; /* Dark text for contrast */
+  padding: 1.5rem 0;
   text-align: center;
-  border-bottom: 2px solid #F4A259; /* Adds a subtle orange accent line */
-}
-
-header .logo-container {
-  margin-bottom: 1rem;
-}
-
-header .logo {
-  max-height: 80px;
-  width: auto;
-  margin: 0 auto;
+  border-bottom: 1px solid #EFA548; /* Subtle separator line */
 }
 
 header nav {
-  margin-top: 1rem;
+  margin: 0;
 }
 
 header nav a {
-  margin: 0 1rem;
-  color: #3E312B; /* Complementary to the logo colors */
-  font-weight: 600;
-  transition: color 0.3s, transform 0.3s;
+  margin: 0 1.5rem;
+  color: #02172C; /* Retain dark navigation links */
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 header nav a:hover {
-  color: #F4A259; /* Highlighted orange tone for hover */
-  transform: scale(1.1);
+  color: #EFA548; /* Highlight effect on hover */
+}
+
+/* Remove Logo Styles */
+header .logo-container {
+  display: none; /* Hide the logo container */
 }
