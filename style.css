@@ -1,115 +1,142 @@
 /* General Styles */
 body {
   font-family: 'Inter', sans-serif;
-  line-height: 1.6;
   margin: 0;
-  background-color: #F9F3EB;
+  padding: 0;
+  background: #F9F3EB;
   color: #02172C;
+  line-height: 1.6;
 }
 
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  color: #EFA548;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Header */
-.theme-header {
-  background: #FFFFFF;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+header {
+  background: #02172C;
+  color: white;
   padding: 1rem 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
 }
 
-.theme-header .branding {
-  display: flex;
-  align-items: center;
+header nav a {
+  margin: 0 1rem;
+  color: white;
+  transition: color 0.3s;
 }
 
-.theme-header .branding .logo {
-  max-height: 50px;
-  margin-right: 10px;
-}
-
-.theme-header nav .menu {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.theme-header nav .menu a {
-  color: #02172C;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.theme-header nav .menu a:hover {
+header nav a:hover {
   color: #EFA548;
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(to right, #EFA548, #02172C);
-  color: white;
   text-align: center;
   padding: 4rem 1rem;
+  background: linear-gradient(to right, #EFA548, #F9F3EB);
+  color: #02172C;
 }
 
-.hero h2 {
+.hero-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.hero .buttons .button {
+.hero-content .buttons a {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
   margin: 0.5rem;
-  text-decoration: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
-.hero .button.primary {
-  background: white;
+.btn-primary {
+  background: #02172C;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #EFA548;
+}
+
+.btn-secondary {
+  border: 2px solid #02172C;
   color: #02172C;
 }
 
-.hero .button.secondary {
-  border: 2px solid white;
+.btn-secondary:hover {
+  background: #02172C;
   color: white;
-  background: transparent;
 }
 
 /* About Section */
-.about img {
-  width: 100%;
+#about {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+#about img {
+  max-width: 100%;
   border-radius: 8px;
+  margin-top: 1rem;
 }
 
 /* Classes Section */
-.classes .class-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.class-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.classes .class-item img {
-  width: 100%;
+.class {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex: 1;
+  min-width: 300px;
+}
+
+.class img {
+  max-width: 100%;
   border-radius: 8px;
 }
 
 /* Contact Section */
-.contact .socials a {
+.socials a {
   margin: 0 0.5rem;
-  color: #02172C;
   font-size: 1.5rem;
+  color: #02172C;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #EFA548;
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 1rem;
   background: #02172C;
   color: white;
+  text-align: center;
+  padding: 1rem 0;
 }
