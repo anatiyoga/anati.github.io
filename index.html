@@ -8,50 +8,62 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header>
+  <!-- Header Section -->
+  <header class="theme-header">
     <div class="container">
-      <h1>Anati Yoga</h1>
+      <div class="branding">
+        <img src="images/anatiyoga-logo.png" alt="Anati Yoga Logo" class="logo">
+        <h1>Anati Yoga</h1>
+      </div>
       <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#classes">Classes</a>
-        <a href="#contact">Contact</a>
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#classes">Classes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </nav>
     </div>
   </header>
 
-  <section id="home">
-    <div class="hero">
-      <h2>Experience the Power of Mindful Living</h2>
-      <p>Discover harmony for your body, mind, and spirit at Anati Yoga.</p>
-      <button>Join a Class</button>
-    </div>
-  </section>
-
-  <section id="about">
+  <!-- Hero Section -->
+  <section id="home" class="hero">
     <div class="container">
-      <h2>About Anati Yoga</h2>
-      <p>Anati Yoga is dedicated to creating a sanctuary where wellness thrives. We blend traditional yoga and meditation to guide individuals on transformative journeys of inner peace and connection.</p>
-      <img src="./images/yoga-1.jpg" alt="Yoga Pose">
+      <h2>Inspiration for Joyful Living</h2>
+      <p>Welcome to Anati Yoga, your online haven for heartful living. Embrace precise alignment, holistic wellness, and a supportive community.</p>
+      <div class="buttons">
+        <a href="#classes" class="button primary">Get Started Now</a>
+        <a href="#about" class="button secondary">View Details</a>
+      </div>
     </div>
   </section>
 
-  <section id="classes">
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>Anati Yoga is dedicated to creating a sanctuary where wellness thrives. Our sessions blend traditional yoga and meditation to harmonize the mind, body, and spirit.</p>
+      <img src="images/about-image.jpg" alt="Yoga Pose">
+    </div>
+  </section>
+
+  <!-- Classes Section -->
+  <section id="classes" class="classes">
     <div class="container">
       <h2>Our Classes</h2>
       <div class="class-grid">
-        <div class="class">
-          <img src="./images/yoga-2.jpg" alt="Beginner Yoga">
+        <div class="class-item">
+          <img src="images/class1.jpg" alt="Beginner Yoga">
           <h3>Beginner Yoga</h3>
-          <p>Perfect for beginners looking to start their yoga journey.</p>
+          <p>Perfect for those starting their yoga journey.</p>
         </div>
-        <div class="class">
-          <img src="./images/yoga-3.jpg" alt="Advanced Yoga">
+        <div class="class-item">
+          <img src="images/class2.jpg" alt="Advanced Yoga">
           <h3>Advanced Yoga</h3>
           <p>Take your practice to the next level with expert guidance.</p>
         </div>
-        <div class="class">
-          <img src="./images/yoga-1.jpg" alt="Meditation Classes">
+        <div class="class-item">
+          <img src="images/class3.jpg" alt="Meditation Classes">
           <h3>Meditation Classes</h3>
           <p>Achieve balance and clarity through guided meditation.</p>
         </div>
@@ -59,7 +71,8 @@
     </div>
   </section>
 
-  <section id="contact">
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
     <div class="container">
       <h2>Contact Us</h2>
       <p>Email: info@anatiyoga.com</p>
@@ -72,6 +85,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
       <p>&copy; 2024 Anati Yoga. All Rights Reserved.</p>
