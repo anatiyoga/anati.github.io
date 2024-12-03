@@ -16,7 +16,7 @@ body {
 }
 
 h1, h2, h3 {
-  color: #EFA548;
+  color: #5A8A7F; /* Updated serene sage green */
 }
 
 p {
@@ -33,6 +33,15 @@ header {
   color: white;
   padding: 1rem 0;
   text-align: center;
+}
+
+header .logo-container {
+  margin-bottom: 1rem;
+}
+
+header .logo {
+  max-height: 80px;
+  width: auto;
 }
 
 header nav a {
