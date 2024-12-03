@@ -16,7 +16,7 @@ body {
 }
 
 h1, h2, h3 {
-  color: #5A8A7F; /* Updated serene sage green */
+  color: #5A8A7F; /* Sage green for a serene yoga theme */
 }
 
 p {
@@ -29,10 +29,11 @@ a {
 
 /* Header */
 header {
-  background: #02172C;
-  color: white;
+  background: #F9F3EB; /* Changed to light beige to match logo */
+  color: #02172C;
   padding: 1rem 0;
   text-align: center;
+  border-bottom: 1px solid #EFA548; /* Optional divider for separation */
 }
 
 header .logo-container {
@@ -46,7 +47,7 @@ header .logo {
 
 header nav a {
   margin: 0 1rem;
-  color: white;
+  color: #02172C; /* Dark text to contrast the light background */
   transition: color 0.3s;
 }
 
