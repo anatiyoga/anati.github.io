@@ -1,59 +1,90 @@
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f8ff; /* Light blue background */
-    color: #333;
+  font-family: 'Inter', sans-serif;
+  background: #F9F3EB;
+  color: #02172C;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  color: #5A8A7F;
+}
+
+/* Header */
 header {
-    background-color: #4CAF50; /* Green for nature and calm */
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+  background: #F9F3EB;
+  color: #02172C;
+  padding: 1rem 0;
+  text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
+header nav a {
+  margin: 0 1rem;
+  color: #02172C;
+  transition: color 0.3s;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+header nav a:hover {
+  color: #EFA548;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
+/* Hero Section */
 .hero {
-    background-image: url('../images/yoga-hero.jpg'); /* Add a yoga-themed hero image */
-    background-size: cover;
-    background-position: center;
-    padding: 100px 20px;
-    text-align: center;
-    color: #fff;
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(to right, #EFA548, #F9F3EB);
 }
 
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #FF6F61; /* Coral color for call-to-action */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
+.hero-content .buttons a {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
+.btn-primary {
+  background: #02172C;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #EFA548;
+}
+
+/* Blog Section */
+#blog {
+  text-align: center;
+  padding: 2rem 0;
+  background: #F9F3EB;
+}
+
+#blog .btn-primary {
+  background: #02172C;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+#blog .btn-primary:hover {
+  background: #EFA548;
+}
+
+/* Footer */
 footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #333;
-    color: #fff;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+  background: #02172C;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
 }
