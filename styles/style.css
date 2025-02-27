@@ -52,13 +52,6 @@ a {
     color: #333;
 }
 
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Space between buttons */
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-}
-
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
