@@ -5,10 +5,12 @@ body {
     padding: 0;
     color: #333;
     line-height: 1.6;
+    background-color: #FFFFFF; /* White background */
 }
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
+    color: #333; /* Dark gray for headings */
 }
 
 a {
@@ -26,28 +28,33 @@ a {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
+    color: #333;
+    padding: 20px;
 }
 
 .hero-content {
     max-width: 600px;
     padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white overlay */
+    border-radius: 10px;
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 20px;
+    color: #333;
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    color: #333;
 }
 
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #FF6F61; /* Coral color */
+    background-color: #FF6F61; /* Coral accent */
     color: #fff;
     border-radius: 5px;
     font-size: 1.1rem;
@@ -55,14 +62,14 @@ a {
 }
 
 .cta-button:hover {
-    background-color: #e65a50; /* Darker shade on hover */
+    background-color: #e65a50; /* Darker coral on hover */
 }
 
 /* About Section */
 .about {
     padding: 60px 20px;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #F4F1DE; /* Beige background */
 }
 
 .about h2 {
@@ -80,6 +87,7 @@ a {
 .classes {
     padding: 60px 20px;
     text-align: center;
+    background-color: #FFFFFF; /* White background */
 }
 
 .classes h2 {
@@ -97,7 +105,7 @@ a {
     max-width: 300px;
     margin: 20px;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #F4F1DE; /* Beige background */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -115,8 +123,8 @@ a {
 .contact {
     padding: 60px 20px;
     text-align: center;
-    background-color: #4CAF50; /* Green */
-    color: #fff;
+    background-color: #A8DADC; /* Soft blue background */
+    color: #333;
 }
 
 .contact h2 {
@@ -127,6 +135,55 @@ a {
 .contact p {
     font-size: 1.1rem;
     margin-bottom: 30px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #FF6F61; /* Coral accent */
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.contact-item a {
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-media a {
+    color: #333;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #FF6F61; /* Coral accent */
 }
 
 /* Footer */
