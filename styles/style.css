@@ -122,6 +122,38 @@ a {
     font-size: 1rem;
 }
 
+/* Blog Section */
+.blog {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #E6E6FA; /* Lavender background */
+    color: #333;
+}
+
+.blog h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.blog p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.blog .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF6F61; /* Coral accent */
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.blog .cta-button:hover {
+    background-color: #e65a50; /* Darker coral on hover */
+}
+
 /* Contact Section */
 .contact {
     padding: 60px 20px;
