@@ -10,9 +10,15 @@ body {
   color: #2f3e2f;
 }
 
+/* GLOBAL SAFETY */
+section {
+  position: relative;
+}
+
 /* NAVBAR */
 .navbar {
   position: absolute;
+  top: 0;
   width: 100%;
   padding: 20px 8%;
   display: flex;
@@ -26,37 +32,31 @@ body {
 }
 
 .navbar nav a {
-  margin-left: 20px;
+  margin-left: 25px;
   text-decoration: none;
   color: #2f3e2f;
+  font-weight: 400;
 }
 
 /* HERO */
 .hero {
-  position: relative;
   height: 100vh;
-  min-height: 720px; /* critical fix */
+  min-height: 750px; /* CRITICAL FIX */
   display: flex;
   align-items: center;
   padding: 0 8%;
-  background: url("./images/hero.png") center/cover no-repeat;
+
+  background-image: url("./images/hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* OVERLAY (for readability) */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.35);
-}
-
-/* HERO CONTENT */
 .hero-content {
-  position: relative;
-  z-index: 2;
   max-width: 600px;
 }
 
+/* TEXT */
 .hero h1 {
   font-size: 56px;
   font-weight: 400;
@@ -77,14 +77,13 @@ body {
   padding: 12px 24px;
   text-decoration: none;
   display: inline-block;
+  border-radius: 4px;
 }
 
 /* FEATURED SECTION */
 .featured {
-  position: relative;
+  padding: 120px 8% 80px; /* strong spacing fix */
   background: #f8f7f3;
-  padding: 100px 8%;
-  z-index: 5;
 }
 
 .container {
@@ -93,8 +92,8 @@ body {
 }
 
 .featured h2 {
-  margin-bottom: 40px;
   font-size: 28px;
+  margin-bottom: 40px;
 }
 
 /* CARDS */
@@ -106,6 +105,8 @@ body {
 
 .card {
   background: white;
+  border-radius: 6px;
+  overflow: hidden;
 }
 
 .card img {
@@ -115,13 +116,13 @@ body {
 }
 
 .card h3 {
-  padding: 15px;
   font-size: 18px;
+  margin: 15px;
 }
 
 .card p {
-  padding: 0 15px 15px;
   font-size: 14px;
+  margin: 0 15px 15px;
   color: #666;
 }
 
@@ -129,4 +130,5 @@ body {
 .footer {
   text-align: center;
   padding: 40px;
+  background: #fff;
 }
