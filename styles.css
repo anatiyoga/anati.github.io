@@ -8,23 +8,22 @@
 body {
   font-family: 'Montserrat', sans-serif;
   color: #2f3e2f;
-}
-
-/* GLOBAL SAFETY */
-section {
-  position: relative;
+  line-height: 1.6;
 }
 
 /* NAVBAR */
 .navbar {
-  position: absolute;
+  position: fixed; /* FIXED instead of absolute */
   top: 0;
   width: 100%;
   padding: 20px 8%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 10;
+  z-index: 100;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -40,25 +39,38 @@ section {
 
 /* HERO */
 .hero {
-  height: 100vh;
-  min-height: 750px; /* CRITICAL FIX */
+  height: 90vh;
+  min-height: 700px;
   display: flex;
   align-items: center;
-  padding: 0 8%;
+
+  padding: 120px 8% 0; /* KEY FIX */
 
   background-image: url("./images/hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  position: relative;
+}
+
+/* overlay for readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 600px;
 }
 
 /* TEXT */
 .hero h1 {
-  font-size: 56px;
+  font-size: 52px;
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 20px;
@@ -78,11 +90,16 @@ section {
   text-decoration: none;
   display: inline-block;
   border-radius: 4px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #44563e;
 }
 
 /* FEATURED SECTION */
 .featured {
-  padding: 120px 8% 80px; /* strong spacing fix */
+  padding: 100px 8% 80px;
   background: #f8f7f3;
 }
 
@@ -100,13 +117,18 @@ section {
 .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 25px;
 }
 
 .card {
   background: white;
   border-radius: 6px;
   overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
@@ -122,7 +144,7 @@ section {
 
 .card p {
   font-size: 14px;
-  margin: 0 15px 15px;
+  margin: 0 15px 20px;
   color: #666;
 }
 
@@ -131,4 +153,35 @@ section {
   text-align: center;
   padding: 40px;
   background: #fff;
+  font-size: 14px;
+  color: #777;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar nav {
+    display: none; /* keep simple for now */
+  }
+
+  .hero {
+    padding: 100px 6% 0;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
 }
