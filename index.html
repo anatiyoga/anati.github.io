@@ -16,7 +16,7 @@
 <style>
 /* RESET & VARIABLES */
 :root {
-  --bg-color: #f5f3ee;
+  --bg-color: #f6f1e5;
   --text-dark: #2c3829;
   --text-light: #6e796b;
   --accent-green: #5a6f52;
@@ -132,6 +132,14 @@ img {
   z-index: 0;
 }
 
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(240, 232, 215, 0.35);
+  z-index: 1;
+  pointer-events: none;
+}
 
 .hero-content {
   position: relative;
