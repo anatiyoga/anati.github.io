@@ -1,354 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>ANATI – Journey to Infinity</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
-  <style>
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    :root{
-      --cream:#f5f3ee;--cream-alt:#eeece6;
-      --green:#3d5039;--green-mid:#5a6f52;--green-lt:#8a9e7e;
-      --text:#2c3829;--text-mid:#4a5e45;--text-lt:#7a8c74;
-      --white:#ffffff;--border:#e4e2db;
-    }
-    html{scroll-behavior:smooth}
-    body{font-family:'Montserrat',sans-serif;color:var(--text);line-height:1.6;background:var(--cream);overflow-x:hidden}
-    img{display:block;max-width:100%}
-    a{text-decoration:none;color:inherit}
-    ul{list-style:none}
+<meta charset="UTF-8">
+<title>ANATI – Journey to Infinity</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* NAVBAR */
-    .navbar{position:fixed;top:0;left:0;right:0;height:72px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;z-index:1000;background:rgba(245,243,238,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
-    .navbar-logo{display:flex;align-items:center;gap:10px}
-    .logo-img{height:30px;width:auto}
-    .logo-text{font-size:15px;font-weight:500;letter-spacing:.12em}
-    .navbar-nav{display:flex;align-items:center;gap:34px}
-    .nav-link{font-size:13px;font-weight:500;letter-spacing:.04em;color:var(--text-mid);position:relative;padding-bottom:2px;transition:color .2s}
-    .nav-link:hover,.nav-link.active{color:var(--text)}
-    .nav-link.active::after{content:"";position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--green);border-radius:2px}
-    .navbar-social{display:flex;align-items:center;gap:16px}
-    .social-icon{color:var(--text-mid);display:flex;align-items:center;transition:color .2s}
-    .social-icon:hover{color:var(--green)}
-    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
-    .hamburger span{display:block;width:22px;height:1.5px;background:var(--text);border-radius:2px}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
 
-    /* =============================================
-       HERO — absolute image on right, content left
-       ============================================= */
-    .hero{
-      position:relative;
-      min-height:100vh;
-      padding-top:72px;
-      background:var(--cream);
-      overflow:hidden;
-    }
-    /* Image fills the right 60% absolutely */
-    .hero-image-wrap{
-      position:absolute;
-      top:0;right:0;bottom:0;
-      width:60%;
-      z-index:0;
-    }
-    /* Soft fade on left edge of image into cream */
-    .hero-image-wrap::before{
-      content:"";
-      position:absolute;
-      top:0;left:0;bottom:0;
-      width:200px;
-      background:linear-gradient(to right,var(--cream),transparent);
-      z-index:1;
-    }
-    .hero-img{width:100%;height:100%;object-fit:cover;object-position:center top}
-    /* Content sits on top in normal flow — determines section height */
-    .hero-content{
-      position:relative;
-      z-index:2;
-      width:44%;
-      min-height:calc(100vh - 72px);
-      display:flex;flex-direction:column;justify-content:center;
-      padding:60px 2% 80px 6%;
-    }
-    .hero-content h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4.5vw,60px);font-weight:300;line-height:1.18;color:var(--text);margin-bottom:18px}
-    .hero-divider{width:40px;height:1.5px;background:var(--green-mid);margin-bottom:20px}
-    .hero-content p{font-size:15px;color:var(--text-mid);line-height:1.8;margin-bottom:34px}
-    .scroll-down{position:absolute;bottom:36px;left:22%;transform:translateX(-50%);z-index:3;color:var(--text-mid);opacity:.5;animation:bounce 2s ease-in-out infinite}
-    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+<style>
 
-    /* SHARED */
-    .btn{display:inline-block;background:var(--green);color:var(--white);font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;letter-spacing:.05em;padding:14px 26px;border-radius:3px;transition:background .25s,transform .2s}
-    .btn:hover{background:var(--green-mid);transform:translateY(-1px)}
-    .container{max-width:1240px;margin:0 auto}
-    .section-label{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--text-lt);margin-bottom:10px}
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
 
-    /* FEATURED */
-    .featured{background:var(--cream);padding:100px 6%}
-    .featured-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px}
-    .featured-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,36px);font-weight:300;line-height:1.25}
-    .view-all{font-size:13px;font-weight:500;color:var(--text-mid);white-space:nowrap;border-bottom:1px solid var(--border);padding-bottom:2px;transition:color .2s}
-    .view-all:hover{color:var(--green)}
-    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-    .card{background:var(--white);border:1px solid var(--border);border-radius:2px;overflow:hidden;transition:transform .3s,box-shadow .3s}
-    .card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(61,80,57,.1)}
-    .card-img-wrap{overflow:hidden;height:195px}
-    .card-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
-    .card:hover .card-img-wrap img{transform:scale(1.04)}
-    .card-body{padding:18px 18px 22px}
-    .card-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--text-lt);margin-bottom:8px}
-    .card-body h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;line-height:1.3;margin-bottom:8px}
-    .card-body p{font-size:13px;color:var(--text-lt);line-height:1.65;margin-bottom:18px}
-    .read-more{font-size:12px;font-weight:500;color:var(--text-mid);border-bottom:1px solid var(--border);padding-bottom:1px;transition:color .2s}
-    .read-more:hover{color:var(--green)}
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #2c3829;
+  background: #f5f3ee;
+}
 
-    /* PHILOSOPHY */
-    .philosophy{background:var(--cream-alt);padding:100px 6%}
-    .philosophy-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-    .philosophy-img-col img{width:100%;height:480px;object-fit:cover;border-radius:2px}
-    .philosophy-text-col{position:relative}
-    .philosophy-watermark{position:absolute;top:-20px;right:-20px;font-family:'Cormorant Garamond',serif;font-size:240px;font-weight:300;color:rgba(61,80,57,.055);line-height:1;pointer-events:none;user-select:none}
-    .philosophy-text-col h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,40px);font-weight:300;line-height:1.25;margin-bottom:20px}
-    .philosophy-desc{font-size:14px;color:var(--text-mid);line-height:1.85;margin-bottom:20px}
-    .philosophy-sig{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;font-weight:300;color:var(--text-mid);margin-bottom:30px}
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top:0;
+  width:100%;
+  height:70px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 6%;
+  background:#f5f3ee;
+  z-index:1000;
+}
 
-    /* NEWSLETTER */
-    .newsletter{background:var(--cream);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 6%}
-    .newsletter-inner{display:flex;align-items:center;gap:48px;flex-wrap:wrap}
-    .newsletter-left{display:flex;align-items:center;gap:18px;flex:0 0 auto}
-    .newsletter-icon{width:48px;height:48px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .newsletter-left h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;margin-bottom:2px}
-    .newsletter-left p{font-size:12px;color:var(--text-lt)}
-    .newsletter-form{flex:1;display:flex;min-width:280px;max-width:440px;border-bottom:1.5px solid var(--text-mid);padding-bottom:4px}
-    .email-input{flex:1;border:none;background:transparent;font-family:'Montserrat',sans-serif;font-size:13px;color:var(--text);outline:none;padding:6px 0}
-    .email-input::placeholder{color:var(--text-lt)}
-    .btn-subscribe{background:var(--green);color:var(--white);border:none;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;padding:10px 22px;border-radius:3px;cursor:pointer;margin-left:12px;transition:background .25s}
-    .btn-subscribe:hover{background:var(--green-mid)}
-    .newsletter-social{flex:0 0 auto;text-align:right}
-    .newsletter-social>p{font-size:12px;color:var(--text-lt);margin-bottom:10px}
-    .social-row{display:flex;gap:14px;justify-content:flex-end}
+.logo {
+  height:32px;
+}
 
-    /* FOOTER */
-    .footer{background:var(--green);color:rgba(255,255,255,.85)}
-    .footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:60px;padding:72px 6% 52px}
-    .footer-brand{display:flex;flex-direction:column;gap:12px}
-    .footer-logo{display:flex;align-items:center;gap:10px}
-    .footer-logo-img{height:28px;width:auto;filter:brightness(0) invert(1) opacity(.9)}
-    .footer-logo span{font-size:15px;font-weight:500;letter-spacing:.14em;color:rgba(255,255,255,.9)}
-    .footer-tagline{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.06em}
-    .footer-col h4{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:18px}
-    .footer-col li{margin-bottom:10px}
-    .footer-col a{font-size:13px;color:rgba(255,255,255,.65);transition:color .2s}
-    .footer-col a:hover{color:#fff}
-    .footer-quote{padding-left:24px;border-left:1px solid rgba(255,255,255,.15)}
-    .footer-quote svg{color:rgba(255,255,255,.35);margin-bottom:14px}
-    .footer-quote p{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;font-style:italic;line-height:1.6;color:rgba(255,255,255,.7);margin-bottom:16px}
-    .footer-quote-line{width:36px;height:1px;background:rgba(255,255,255,.25)}
-    .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:20px 6%;text-align:center}
-    .footer-bottom p{font-size:12px;color:rgba(255,255,255,.3);letter-spacing:.04em}
+.navbar nav a {
+  margin-left:25px;
+  text-decoration:none;
+  color:#4a5e45;
+  font-size:14px;
+}
 
-    /* RESPONSIVE */
-    @media(max-width:1100px){
-      .cards{grid-template-columns:repeat(2,1fr)}
-      .footer-inner{grid-template-columns:1fr 1fr;gap:40px}
-    }
-    @media(max-width:860px){
-      /* Stack: image on top, content below */
-      .hero{min-height:auto;display:flex;flex-direction:column}
-      .hero-image-wrap{position:relative;top:auto;right:auto;bottom:auto;width:100%;height:56vw;min-height:280px;z-index:0;order:1}
-      .hero-image-wrap::before{width:100%;height:80px;bottom:auto;background:linear-gradient(to bottom,var(--cream),transparent)}
-      .hero-content{width:100%;min-height:auto;padding:40px 6% 60px;text-align:center;order:2}
-      .hero-divider{margin:0 auto 20px}
-      .scroll-down{display:none}
-      .philosophy-inner{grid-template-columns:1fr;gap:40px}
-      .philosophy-img-col img{height:280px}
-      .philosophy-watermark{font-size:140px}
-      .navbar-social{display:none}
-      .newsletter-inner{flex-direction:column;gap:28px;text-align:center}
-      .newsletter-form{max-width:100%;width:100%}
-      .newsletter-social{text-align:center}
-      .social-row{justify-content:center}
-    }
-    @media(max-width:640px){
-      .navbar-nav{display:none}
-      .hamburger{display:flex}
-      .cards{grid-template-columns:1fr}
-      .featured-header{flex-direction:column;align-items:flex-start;gap:10px}
-      .footer-inner{grid-template-columns:1fr;gap:32px}
-    }
-  </style>
+/* HERO */
+.hero {
+  display:flex;
+  height:100vh;
+  padding-top:70px;
+}
+
+/* LEFT CONTENT */
+.hero-content {
+  width:45%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-left:6%;
+}
+
+.hero h1 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:56px;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+
+.hero p {
+  font-size:16px;
+  margin-bottom:30px;
+  color:#4a5e45;
+}
+
+.btn {
+  background:#5a6f52;
+  color:white;
+  padding:12px 24px;
+  text-decoration:none;
+  display:inline-block;
+  border-radius:4px;
+}
+
+/* RIGHT IMAGE */
+.hero-image {
+  width:55%;
+  height:100%;
+}
+
+.hero-image img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* FEATURED */
+.featured {
+  padding:100px 6%;
+}
+
+.featured h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:32px;
+  margin-bottom:40px;
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.card {
+  background:white;
+}
+
+.card img {
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card h3 {
+  margin:15px;
+}
+
+.card p {
+  margin:0 15px 15px;
+  color:#666;
+}
+
+/* FOOTER */
+.footer {
+  text-align:center;
+  padding:40px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero {
+    flex-direction:column;
+    height:auto;
+  }
+
+  .hero-content {
+    width:100%;
+    padding:40px 6%;
+  }
+
+  .hero-image {
+    width:100%;
+    height:300px;
+  }
+
+  .cards {
+    grid-template-columns:1fr;
+  }
+}
+
+</style>
 </head>
+
 <body>
 
 <header class="navbar">
-  <a href="#" class="navbar-logo">
-    <img src="./images/logo.svg" alt="ANATI" class="logo-img">
-    <span class="logo-text">ANATI</span>
-  </a>
-  <nav class="navbar-nav">
-    <a href="#" class="nav-link active">Home</a>
-    <a href="#" class="nav-link">Writings</a>
-    <a href="#" class="nav-link">About</a>
-    <a href="#" class="nav-link">Journal</a>
-    <a href="#" class="nav-link">Contact</a>
+  <img src="./images/logo.svg" class="logo">
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Writings</a>
+    <a href="#">About</a>
+    <a href="#">Journal</a>
+    <a href="#">Contact</a>
   </nav>
-  <div class="navbar-social">
-    <a href="#" aria-label="Instagram" class="social-icon">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-    </a>
-    <a href="#" aria-label="X" class="social-icon">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-    </a>
-    <a href="#" aria-label="YouTube" class="social-icon">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="currentColor" stroke="none"/></svg>
-    </a>
-  </div>
-  <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="hero-image-wrap">
-    <img src="./images/hero.png" alt="Meditation in nature" class="hero-img">
-  </div>
+
   <div class="hero-content">
     <h1>Journey inward.<br>Discover infinity.</h1>
-    <div class="hero-divider"></div>
-    <p>Reflections on yoga, mind, and awareness<br>to help you live a more conscious life.</p>
-    <a href="#" class="btn">Explore Writings &nbsp;&rarr;</a>
+
+    <p>
+      Reflections on yoga, mind, and awareness
+      to help you live a more conscious life.
+    </p>
+
+    <a href="#" class="btn">Explore Writings →</a>
   </div>
-  <a href="#featured" class="scroll-down" aria-label="Scroll down">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-  </a>
+
+  <div class="hero-image">
+    <img src="./images/hero.png">
+  </div>
+
 </section>
 
-<section class="featured" id="featured">
-  <div class="container">
-    <div class="featured-header">
-      <div>
-        <p class="section-label">Featured Writings</p>
-        <h2>Thoughts to reflect. Words to awaken.</h2>
-      </div>
-      <a href="#" class="view-all">View all writings &nbsp;&rarr;</a>
-    </div>
-    <div class="cards">
-      <article class="card">
-        <div class="card-img-wrap"><img src="./images/post1.jpg" alt="Awareness"></div>
-        <div class="card-body">
-          <span class="card-tag">Awareness</span>
-          <h3>The Art of Being Present</h3>
-          <p>Presence is not something you do, it is something you return to.</p>
-          <a href="#" class="read-more">Read more &nbsp;&rarr;</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-img-wrap"><img src="./images/post2.jpg" alt="Mind"></div>
-        <div class="card-body">
-          <span class="card-tag">Mind</span>
-          <h3>The Mind is Not the Master</h3>
-          <p>You are not your thoughts. You are the one who watches them.</p>
-          <a href="#" class="read-more">Read more &nbsp;&rarr;</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-img-wrap"><img src="./images/post3.jpg" alt="Life"></div>
-        <div class="card-body">
-          <span class="card-tag">Life</span>
-          <h3>Freedom Lies in Simplicity</h3>
-          <p>When you let go of unnecessary, life becomes beautifully simple.</p>
-          <a href="#" class="read-more">Read more &nbsp;&rarr;</a>
-        </div>
-      </article>
-      <article class="card">
-        <div class="card-img-wrap"><img src="./images/post4.jpg" alt="Yoga"></div>
-        <div class="card-body">
-          <span class="card-tag">Yoga</span>
-          <h3>Yoga is Coming Home to Yourself</h3>
-          <p>Not a practice on the mat, but a way of living with awareness.</p>
-          <a href="#" class="read-more">Read more &nbsp;&rarr;</a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
+<!-- FEATURED -->
+<section class="featured">
+  <h2>Thoughts to reflect. Words to awaken.</h2>
 
-<section class="philosophy">
-  <div class="container philosophy-inner">
-    <div class="philosophy-img-col">
-      <img src="./images/philosophy.jpg" alt="The ANATI Philosophy">
+  <div class="cards">
+    <div class="card">
+      <img src="./images/post1.jpg">
+      <h3>The Art of Being Present</h3>
+      <p>Presence is not something you do, it is something you return to.</p>
     </div>
-    <div class="philosophy-text-col">
-      <div class="philosophy-watermark">A</div>
-      <p class="section-label">The Anati Philosophy</p>
-      <h2>Living in alignment<br>with truth and awareness.</h2>
-      <p class="philosophy-desc">ANATI is a space for those who seek depth, clarity and inner freedom. Through reflections on yoga, mind, and life, the intention is simple &ndash; to help you remember who you truly are.</p>
-      <p class="philosophy-sig">&mdash; <em>Anati</em></p>
-      <a href="#" class="btn">Read more about Anati &nbsp;&rarr;</a>
-    </div>
-  </div>
-</section>
 
-<section class="newsletter">
-  <div class="container newsletter-inner">
-    <div class="newsletter-left">
-      <div class="newsletter-icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </div>
-      <div>
-        <h3>Stay connected</h3>
-        <p>New reflections, straight to your inbox.</p>
-      </div>
+    <div class="card">
+      <img src="./images/post2.jpg">
+      <h3>The Mind is Not the Master</h3>
+      <p>You are not your thoughts.</p>
     </div>
-    <div class="newsletter-form">
-      <input type="email" placeholder="Enter your email" class="email-input">
-      <button class="btn-subscribe">Subscribe</button>
+
+    <div class="card">
+      <img src="./images/post3.jpg">
+      <h3>Freedom Lies in Simplicity</h3>
+      <p>Life becomes beautifully simple.</p>
     </div>
-    <div class="newsletter-social">
-      <p>Follow the journey</p>
-      <div class="social-row">
-        <a href="#" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-        <a href="#" class="social-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-        <a href="#" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="currentColor" stroke="none"/></svg></a>
-      </div>
+
+    <div class="card">
+      <img src="./images/post4.jpg">
+      <h3>Yoga is Coming Home</h3>
+      <p>A way of living with awareness.</p>
     </div>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <img src="./images/logo.svg" alt="ANATI" class="footer-logo-img">
-        <span>ANATI</span>
-      </div>
-      <p class="footer-tagline">Journey to Infinity.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Writings</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Journal</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="#">Awareness</a></li>
-        <li><a href="#">Mind</a></li>
-        <li><a href="#">Yoga</a></li>
-        <li><a href="#">Life</a></li>
-      </ul>
-    </div>
-    <div class="footer-quote">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
-      <p>The only journey is the one within. Everything else is just a path.</p>
-      <div class="footer-quote-line"></div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 ANATI. All rights reserved.</p>
-  </div>
+  <p>© 2026 ANATI</p>
 </footer>
 
 </body>
