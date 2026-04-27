@@ -119,16 +119,24 @@ img {
   display: flex;
   align-items: center;
   padding: 0 6%;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
   background-image: url('./images/hero-bg.jpg');
   background-size: cover;
   background-position: center;
+  transform: scaleX(-1);
+  z-index: 0;
 }
 
 .hero::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: linear-gradient(to right, rgba(245, 243, 238, 0.95) 0%, rgba(245, 243, 238, 0.7) 45%, rgba(245, 243, 238, 0) 100%);
+  background: linear-gradient(to right, rgba(245, 243, 238, 0.8) 0%, rgba(245, 243, 238, 0.3) 50%, rgba(245, 243, 238, 0) 100%);
   z-index: 1;
 }
 
@@ -582,6 +590,7 @@ img {
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg"></div>
   <div class="hero-content">
     <h1>Journey inward.<br>Discover infinity.</h1>
     <hr>
