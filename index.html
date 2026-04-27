@@ -4,228 +4,731 @@
 <meta charset="UTF-8">
 <title>ANATI – Journey to Infinity</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Reflections on yoga, mind, and awareness to help you live a more conscious life.">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+<!-- FontAwesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+/* RESET & VARIABLES */
+:root {
+  --bg-color: #f5f3ee;
+  --text-dark: #2c3829;
+  --text-light: #6e796b;
+  --accent-green: #5a6f52;
+  --accent-green-hover: #4a5b42;
+  --footer-bg: #4c5a44;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Montserrat', sans-serif;
+  --font-script: 'Alex Brush', cursive;
+}
 
-/* RESET */
-* { margin:0; padding:0; box-sizing:border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  color: #2c3829;
-  background: #f5f3ee;
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background: var(--bg-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn {
+  background: var(--accent-green);
+  color: white;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: var(--accent-green-hover);
 }
 
 /* NAVBAR */
 .navbar {
-  position: fixed;
-  top:0;
-  width:100%;
-  height:70px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:0 6%;
-  background:#f5f3ee;
-  z-index:1000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6%;
+  z-index: 1000;
 }
 
-.logo {
-  height:32px;
+.logo img {
+  height: 35px;
 }
 
-.navbar nav a {
-  margin-left:25px;
-  text-decoration:none;
-  color:#4a5e45;
-  font-size:14px;
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--text-dark);
+}
+
+.nav-socials {
+  display: flex;
+  gap: 20px;
+  font-size: 18px;
 }
 
 /* HERO */
 .hero {
-  display:flex;
-  height:100vh;
-  padding-top:70px;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 6%;
+  background-image: url('./images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
-/* LEFT CONTENT */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, rgba(245, 243, 238, 0.95) 0%, rgba(245, 243, 238, 0.7) 45%, rgba(245, 243, 238, 0) 100%);
+  z-index: 1;
+}
+
 .hero-content {
-  width:45%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding-left:6%;
+  position: relative;
+  z-index: 2;
+  max-width: 550px;
+  margin-top: 50px;
 }
 
 .hero h1 {
-  font-family:'Cormorant Garamond', serif;
-  font-size:56px;
-  line-height:1.2;
-  margin-bottom:20px;
+  font-family: var(--font-serif);
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.hero hr {
+  width: 50px;
+  border: none;
+  height: 1px;
+  background: var(--text-dark);
+  margin-bottom: 25px;
 }
 
 .hero p {
-  font-size:16px;
-  margin-bottom:30px;
-  color:#4a5e45;
+  font-size: 18px;
+  color: var(--text-light);
+  margin-bottom: 40px;
+  font-weight: 300;
 }
 
-.btn {
-  background:#5a6f52;
-  color:white;
-  padding:12px 24px;
-  text-decoration:none;
-  display:inline-block;
-  border-radius:4px;
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  font-size: 24px;
+  color: white;
+  animation: bounce 2s infinite;
 }
 
-/* RIGHT IMAGE */
-.hero-image {
-  width:55%;
-  height:100%;
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+  40% { transform: translateY(-10px) translateX(-50%); }
+  60% { transform: translateY(-5px) translateX(-50%); }
 }
 
-.hero-image img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* FEATURED */
+/* FEATURED WRITINGS */
 .featured {
-  padding:100px 6%;
+  padding: 100px 6%;
+  background: #ffffff;
 }
 
-.featured h2 {
-  font-family:'Cormorant Garamond', serif;
-  font-size:32px;
-  margin-bottom:40px;
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 50px;
+}
+
+.section-title .subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.section-title h2 {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.view-all {
+  font-size: 14px;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid var(--text-light);
+  padding-bottom: 2px;
+}
+
+.view-all:hover {
+  color: var(--text-dark);
+  border-color: var(--text-dark);
 }
 
 .cards {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
 }
 
 .card {
-  background:white;
+  background: #faf9f6;
+  border: 1px solid #eee;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-wrapper {
+  overflow: hidden;
+  height: 240px;
 }
 
 .card img {
-  width:100%;
-  height:200px;
-  object-fit:cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 25px 20px;
+}
+
+.card-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
 }
 
 .card h3 {
-  margin:15px;
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  line-height: 1.3;
 }
 
 .card p {
-  margin:0 15px 15px;
-  color:#666;
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 25px;
+  font-weight: 300;
+}
+
+.read-more {
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.read-more:hover {
+  gap: 8px;
+}
+
+/* PHILOSOPHY SECTION */
+.philosophy {
+  display: flex;
+  background: var(--bg-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-image {
+  width: 45%;
+}
+
+.philosophy-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.philosophy-content {
+  width: 55%;
+  padding: 100px 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* Abstract Background A */
+.philosophy-bg-shape {
+  position: absolute;
+  right: -50px;
+  bottom: -50px;
+  height: 120%;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.philosophy .subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.philosophy h2 {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.philosophy p {
+  font-size: 16px;
+  color: var(--text-light);
+  font-weight: 300;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.signature {
+  font-family: var(--font-script);
+  font-size: 42px;
+  color: var(--text-dark);
+  margin: 20px 0 40px;
+}
+
+/* NEWSLETTER */
+.newsletter {
+  padding: 60px 6%;
+  background: #fdfcf9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e8e6e1;
+}
+
+.news-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.news-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.news-left h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.news-left p {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.news-center {
+  display: flex;
+  width: 400px;
+}
+
+.news-center input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--text-dark);
+  padding: 10px 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  outline: none;
+}
+
+.news-center button {
+  border-radius: 0;
+  margin-left: 20px;
+}
+
+.news-right {
+  text-align: right;
+}
+
+.news-right span {
+  font-size: 14px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.news-right .socials {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  font-size: 18px;
 }
 
 /* FOOTER */
 .footer {
-  text-align:center;
-  padding:40px;
+  background: var(--footer-bg);
+  color: #e8e6e1;
+  padding: 80px 6% 40px;
 }
 
-/* MOBILE */
-@media(max-width:900px){
-  .hero {
-    flex-direction:column;
-    height:auto;
-  }
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
 
-  .hero-content {
-    width:100%;
-    padding:40px 6%;
-  }
+.footer-col.brand {
+  max-width: 300px;
+}
 
-  .hero-image {
-    width:100%;
-    height:300px;
-  }
+.footer-col.brand img {
+  height: 40px;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+}
 
+.footer-col.brand p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.footer-col h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: white;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.footer-col ul li a:hover {
+  opacity: 1;
+  color: white;
+}
+
+.footer-col.quote {
+  max-width: 350px;
+}
+
+.footer-col.quote i {
+  font-size: 24px;
+  opacity: 0.5;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.footer-col.quote p {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.footer-col.quote span {
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 30px;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* RESPONSIVE */
+@media(max-width: 1024px) {
   .cards {
-    grid-template-columns:1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
+  .hero h1 { font-size: 56px; }
+  .philosophy { flex-direction: column; }
+  .philosophy-image, .philosophy-content { width: 100%; }
+  .philosophy-image { height: 400px; }
+  .newsletter { flex-direction: column; gap: 30px; text-align: center; }
+  .news-center { width: 100%; max-width: 500px; }
+  .news-right { text-align: center; }
+  .news-right .socials { justify-content: center; }
 }
 
+@media(max-width: 768px) {
+  .nav-links, .nav-socials { display: none; } /* Add hamburger menu later */
+  .hero::before {
+    background: linear-gradient(to bottom, rgba(245, 243, 238, 0.9) 0%, rgba(245, 243, 238, 0.8) 50%, rgba(245, 243, 238, 0.3) 100%);
+  }
+  .hero-content { margin-top: -100px; }
+  .hero h1 { font-size: 42px; }
+  .cards { grid-template-columns: 1fr; }
+  .footer-top { flex-direction: column; gap: 40px; }
+  .section-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+}
 </style>
 </head>
-
 <body>
 
+<!-- NAVBAR -->
 <header class="navbar">
-  <img src="./images/logo.svg" class="logo">
-  <nav>
-    <a href="#">Home</a>
+  <a href="#" class="logo">
+    <img src="./images/logo.svg" alt="ANATI Logo">
+  </a>
+  <nav class="nav-links">
+    <a href="#" class="active">Home</a>
     <a href="#">Writings</a>
     <a href="#">About</a>
     <a href="#">Journal</a>
     <a href="#">Contact</a>
   </nav>
+  <div class="nav-socials">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-
   <div class="hero-content">
     <h1>Journey inward.<br>Discover infinity.</h1>
-
-    <p>
-      Reflections on yoga, mind, and awareness
-      to help you live a more conscious life.
-    </p>
-
-    <a href="#" class="btn">Explore Writings →</a>
+    <hr>
+    <p>Reflections on yoga, mind, and awareness<br>to help you live a more conscious life.</p>
+    <a href="#" class="btn">Explore Writings <i class="fas fa-arrow-right"></i></a>
   </div>
-
-  <div class="hero-image">
-    <img src="./images/hero.png">
-  </div>
-
+  <a href="#featured" class="hero-scroll"><i class="fas fa-arrow-down"></i></a>
 </section>
 
 <!-- FEATURED -->
-<section class="featured">
-  <h2>Thoughts to reflect. Words to awaken.</h2>
+<section id="featured" class="featured">
+  <div class="section-header">
+    <div class="section-title">
+      <span class="subtitle">Featured Writings</span>
+      <h2>Thoughts to reflect. Words to awaken.</h2>
+    </div>
+    <a href="#" class="view-all">View all writings <i class="fas fa-arrow-right"></i></a>
+  </div>
 
   <div class="cards">
-    <div class="card">
-      <img src="./images/post1.jpg">
-      <h3>The Art of Being Present</h3>
-      <p>Presence is not something you do, it is something you return to.</p>
-    </div>
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="./images/post1.jpg" alt="Leaf with water droplets">
+      </div>
+      <div class="card-content">
+        <span class="card-tag">Awareness</span>
+        <h3>The Art of Being Present</h3>
+        <p>Presence is not something you do, it is something you return to.</p>
+        <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
 
-    <div class="card">
-      <img src="./images/post2.jpg">
-      <h3>The Mind is Not the Master</h3>
-      <p>You are not your thoughts.</p>
-    </div>
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="./images/post2.jpg" alt="Zen stones">
+      </div>
+      <div class="card-content">
+        <span class="card-tag">Mind</span>
+        <h3>The Mind is Not the Master</h3>
+        <p>You are not your thoughts. You are the one who watches them.</p>
+        <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
 
-    <div class="card">
-      <img src="./images/post3.jpg">
-      <h3>Freedom Lies in Simplicity</h3>
-      <p>Life becomes beautifully simple.</p>
-    </div>
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="./images/post3.jpg" alt="Birds flying">
+      </div>
+      <div class="card-content">
+        <span class="card-tag">Life</span>
+        <h3>Freedom Lies in Simplicity</h3>
+        <p>When you let go of unnecessary, life becomes beautifully simple.</p>
+        <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
 
-    <div class="card">
-      <img src="./images/post4.jpg">
-      <h3>Yoga is Coming Home</h3>
-      <p>A way of living with awareness.</p>
+    <article class="card">
+      <div class="card-img-wrapper">
+        <img src="./images/post4.jpg" alt="Forest path">
+      </div>
+      <div class="card-content">
+        <span class="card-tag">Yoga</span>
+        <h3>Yoga is Coming Home to Yourself</h3>
+        <p>Not a practice on the mat, but a way of living with awareness.</p>
+        <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy">
+  <div class="philosophy-image">
+    <img src="./images/philosophy-vase.jpg" alt="Minimalist vase with leafy branch">
+  </div>
+  <div class="philosophy-content">
+    <img src="./images/logo.svg" alt="" class="philosophy-bg-shape">
+    <span class="subtitle">The Anati Philosophy</span>
+    <h2>Living in alignment with truth and awareness.</h2>
+    <p>ANATI is a space for those who seek depth, clarity and inner freedom. Through reflections on yoga, mind, and life, the intention is simple – to help you remember who you truly are.</p>
+    <div class="signature">- Anati</div>
+    <div>
+      <a href="#" class="btn">Read more about Anati <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
 
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="news-left">
+    <div class="news-icon">
+      <i class="far fa-envelope"></i>
+    </div>
+    <div>
+      <h4>Stay connected</h4>
+      <p>New reflections, straight to your inbox.</p>
+    </div>
+  </div>
+  <div class="news-center">
+    <input type="email" placeholder="Enter your email">
+    <button class="btn">Subscribe</button>
+  </div>
+  <div class="news-right">
+    <span>Follow the journey</span>
+    <div class="socials">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
-  <p>© 2026 ANATI</p>
+  <div class="footer-top">
+    <div class="footer-col brand">
+      <img src="./images/logo.svg" alt="ANATI">
+      <p>Journey to Infinity.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Writings</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#">Awareness</a></li>
+        <li><a href="#">Mind</a></li>
+        <li><a href="#">Yoga</a></li>
+        <li><a href="#">Life</a></li>
+      </ul>
+    </div>
+    <div class="footer-col quote">
+      <i class="fas fa-quote-left"></i>
+      <p>The only journey is the one within. Everything else is just a path.</p>
+      <span></span>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 ANATI. All rights reserved.</p>
+  </div>
 </footer>
 
 </body>
