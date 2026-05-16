@@ -29,150 +29,491 @@
 
       <!-- Filter Tabs -->
       <div class="filter-tabs" role="tablist" aria-label="Filter by category">
-        <button class="filter-tab active" data-filter="all" role="tab">All</button>
-        <button class="filter-tab" data-filter="awareness" role="tab">Awareness</button>
+        <button class="filter-tab active" data-filter="all" role="tab">All <span class="tab-count" id="count-all">23</span></button>
         <button class="filter-tab" data-filter="mind" role="tab">Mind</button>
-        <button class="filter-tab" data-filter="life" role="tab">Life</button>
         <button class="filter-tab" data-filter="yoga" role="tab">Yoga</button>
+        <button class="filter-tab" data-filter="meditation" role="tab">Meditation</button>
+        <button class="filter-tab" data-filter="awareness" role="tab">Awareness</button>
+        <button class="filter-tab" data-filter="life" role="tab">Life</button>
       </div>
 
-      <!-- Grid -->
+      <!-- All 23 articles, newest first -->
       <div class="writings-full-grid" id="writingsGrid">
 
-        <article class="w-card" data-category="awareness">
-          <div class="card-image">
-            <img src="images/post1.jpg" alt="The Art of Being Present"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'>post1.jpg</div>'" />
-          </div>
-          <div class="card-body">
-            <p class="card-category">Awareness</p>
-            <h2 class="card-title">The Art of Being Present</h2>
-            <p class="card-excerpt">Presence is not something you do; it is something you return to. Again and again.</p>
-            <a href="writing.html" class="read-more">Read more</a>
-          </div>
-        </article>
-
+        <!-- 1. Apr 2026 -->
         <article class="w-card" data-category="mind">
-          <div class="card-image">
-            <img src="images/post2.jpg" alt="The Mind is Not the Master"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'>post2.jpg</div>'" />
-          </div>
-          <div class="card-body">
-            <p class="card-category">Mind</p>
-            <h2 class="card-title">The Mind is Not the Master</h2>
-            <p class="card-excerpt">You are not your thoughts. You are the one who watches them.</p>
-            <a href="writing.html" class="read-more">Read more</a>
-          </div>
+          <a href="https://medium.com/@anatiyoga/the-one-skill-ai-cant-replace-and-how-yoga-helps-you-develop-it-b95f34d42dd7"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Presence · Awareness</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Mind</p>
+                <span class="card-date">Apr 26, 2026</span>
+              </div>
+              <h2 class="card-title">The One Skill AI Can't Replace (And How Yoga Helps You Develop It)</h2>
+              <p class="card-excerpt">When everyone has access to infinite knowledge, what makes you valuable?</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
         </article>
 
-        <article class="w-card" data-category="life">
-          <div class="card-image">
-            <img src="images/post3.jpg" alt="Freedom Lies in Simplicity"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'>post3.jpg</div>'" />
-          </div>
-          <div class="card-body">
-            <p class="card-category">Life</p>
-            <h2 class="card-title">Freedom Lies in Simplicity</h2>
-            <p class="card-excerpt">When you let go of unnecessary, life becomes beautifully simple.</p>
-            <a href="writing.html" class="read-more">Read more</a>
-          </div>
-        </article>
-
-        <article class="w-card" data-category="yoga">
-          <div class="card-image">
-            <img src="images/post4.jpg" alt="Yoga is Coming Home to Yourself"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'>post4.jpg</div>'" />
-          </div>
-          <div class="card-body">
-            <p class="card-category">Yoga</p>
-            <h2 class="card-title">Yoga is Coming Home to Yourself</h2>
-            <p class="card-excerpt">Not a practice on the mat, but a way of living with awareness.</p>
-            <a href="writing.html" class="read-more">Read more</a>
-          </div>
-        </article>
-
-        <article class="w-card" data-category="yoga">
-          <div class="card-image">
-            <img src="images/post5.jpg" alt="The Beauty of Letting Go"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'>post5.jpg</div>'" />
-          </div>
-          <div class="card-body">
-            <p class="card-category">Yoga</p>
-            <h2 class="card-title">The Beauty of Letting Go</h2>
-            <p class="card-excerpt">Release is not weakness. It is the deepest form of strength.</p>
-            <a href="writing.html" class="read-more">Read more</a>
-          </div>
-        </article>
-
-        <article class="w-card" data-category="life">
-          <div class="card-image">
-            <img src="images/post6.jpg" alt="Gratitude as a Practice"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'>post6.jpg</div>'" />
-          </div>
-          <div class="card-body">
-            <p class="card-category">Life</p>
-            <h2 class="card-title">Gratitude as a Practice</h2>
-            <p class="card-excerpt">Gratitude turns what we have into enough, and more.</p>
-            <a href="writing.html" class="read-more">Read more</a>
-          </div>
-        </article>
-
-        <article class="w-card" data-category="mind">
-          <div class="card-image">
-            <img src="images/post7.jpg" alt="Silence is the Teacher"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'>post7.jpg</div>'" />
-          </div>
-          <div class="card-body">
-            <p class="card-category">Mind</p>
-            <h2 class="card-title">Silence is the Teacher</h2>
-            <p class="card-excerpt">When you stop filling every moment with noise, wisdom finds you.</p>
-            <a href="writing.html" class="read-more">Read more</a>
-          </div>
-        </article>
-
+        <!-- 2. Mar 2026 -->
         <article class="w-card" data-category="awareness">
-          <div class="card-image">
-            <img src="images/post8.jpg" alt="The Space Between Thoughts"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'>post8.jpg</div>'" />
-          </div>
-          <div class="card-body">
-            <p class="card-category">Awareness</p>
-            <h2 class="card-title">The Space Between Thoughts</h2>
-            <p class="card-excerpt">In the gap between one thought and the next, you find yourself.</p>
-            <a href="writing.html" class="read-more">Read more</a>
-          </div>
+          <a href="https://medium.com/@anatiyoga/the-awareness-that-never-sleeps-9911a8112771"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <img src="https://miro.medium.com/v2/resize:fit:800/1*WmMUNnMXXWd-UzWhQdLGxg.jpeg"
+                alt="The Awareness That Never Sleeps"
+                onerror="this.style.display='none';this.parentNode.querySelector('.img-placeholder') && (this.parentNode.querySelector('.img-placeholder').style.display='flex')" />
+              <div class="img-placeholder" style="display:none">Awareness</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Awareness</p>
+                <span class="card-date">Mar 19, 2026</span>
+              </div>
+              <h2 class="card-title">The Awareness That Never Sleeps</h2>
+              <p class="card-excerpt">Ever noticed how you know you slept well? That simple awareness holds a profound truth about your mind.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
         </article>
 
+        <!-- 3. Nov 2025 -->
+        <article class="w-card" data-category="awareness">
+          <a href="https://medium.com/@anatiyoga/the-one-practice-that-ends-all-your-inner-battles-e30cf65d4936"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Inner Peace</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Awareness</p>
+                <span class="card-date">Nov 30, 2025</span>
+              </div>
+              <h2 class="card-title">The One Practice That Ends All Your Inner Battles</h2>
+              <p class="card-excerpt">The fight with others? It started inside you.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 4. Oct 2025 -->
+        <article class="w-card" data-category="life">
+          <a href="https://medium.com/@anatiyoga/the-energy-equation-food-thoughts-lasting-wellness-41fe20a105cf"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <img src="https://miro.medium.com/v2/resize:fill:640:426/1*ZgOuBiHiwC8_mjrNRabqsw.jpeg"
+                alt="The Energy Equation"
+                onerror="this.parentNode.innerHTML='<div class=img-placeholder>Wellness</div>'" />
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Life</p>
+                <span class="card-date">Oct 25, 2025</span>
+              </div>
+              <h2 class="card-title">The Energy Equation: Food + Thoughts = Lasting Wellness</h2>
+              <p class="card-excerpt">Why balancing your plate isn't enough — and what's missing from your wellness routine.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 5. Aug 2025 — AI & Yoga -->
+        <article class="w-card" data-category="mind">
+          <a href="https://medium.com/@anatiyoga/prompt-engineering-for-the-mind-what-yoga-and-ai-teach-us-about-living-better-c4e46d741cc7"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <img src="https://miro.medium.com/v2/resize:fill:640:426/1*O98nztlA_ViF4uMURp--Jg.jpeg"
+                alt="Prompt Engineering for the Mind"
+                onerror="this.parentNode.innerHTML='<div class=img-placeholder>Mind & AI</div>'" />
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Mind</p>
+                <span class="card-date">Aug 29, 2025</span>
+              </div>
+              <h2 class="card-title">Prompt Engineering for the Mind: What Yoga and AI Teach Us About Living Better</h2>
+              <p class="card-excerpt">The world runs on prompts — AI needs them, and so do we.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 6. Aug 2025 — Meditation young -->
+        <article class="w-card" data-category="meditation">
+          <a href="https://medium.com/@anatiyoga/why-you-should-start-meditation-at-a-young-age-ad71c161cb92"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Meditation</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Meditation</p>
+                <span class="card-date">Aug 21, 2025</span>
+              </div>
+              <h2 class="card-title">Why You Should Start Meditation at a Young Age</h2>
+              <p class="card-excerpt">You might think meditation is for older people — but your younger years may be the best time to begin.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 7. Aug 2025 — Poise -->
+        <article class="w-card" data-category="life">
+          <a href="https://medium.com/@anatiyoga/cultivating-poise-the-key-to-a-successful-life-572df1f0e6c2"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Stillness</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Life</p>
+                <span class="card-date">Aug 21, 2025</span>
+              </div>
+              <h2 class="card-title">Cultivating Poise: The Key to a Successful Life</h2>
+              <p class="card-excerpt">One of the most crucial qualities for leading a successful life is poise — inner balance amid outer demands.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 8. Aug 2025 — Flexibility -->
         <article class="w-card" data-category="yoga">
-          <div class="card-image">
-            <img src="images/post9.jpg" alt="Breath as the Bridge"
-              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'>post9.jpg</div>'" />
-          </div>
-          <div class="card-body">
-            <p class="card-category">Yoga</p>
-            <h2 class="card-title">Breath as the Bridge</h2>
-            <p class="card-excerpt">The breath connects the body to the present and the mind to stillness.</p>
-            <a href="writing.html" class="read-more">Read more</a>
-          </div>
+          <a href="https://medium.com/@anatiyoga/flexibility-for-better-living-a-yogic-analysis-da6e1f27022e"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Yoga · Body</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Yoga</p>
+                <span class="card-date">Aug 21, 2025</span>
+              </div>
+              <h2 class="card-title">Flexibility for Better Living: A Yogic Analysis</h2>
+              <p class="card-excerpt">As we age, we notice increasing rigidity. Yoga offers a path back to ease and openness.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 9. Aug 2025 — Humility -->
+        <article class="w-card" data-category="life">
+          <a href="https://medium.com/@anatiyoga/humility-a-yogic-path-to-personal-growth-74eef6b3cad3"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Humility</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Life</p>
+                <span class="card-date">Aug 21, 2025</span>
+              </div>
+              <h2 class="card-title">Humility: A Yogic Path to Personal Growth</h2>
+              <p class="card-excerpt">In the hustle of daily life, we encounter dominance — yoga invites us inward to a quieter strength.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 10. Aug 2025 — Mental waste -->
+        <article class="w-card" data-category="mind">
+          <a href="https://medium.com/@anatiyoga/mental-waste-understanding-its-impact-and-how-to-address-it-d8d8720cff3e"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Mind · Clarity</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Mind</p>
+                <span class="card-date">Aug 21, 2025</span>
+              </div>
+              <h2 class="card-title">Mental Waste: Understanding Its Impact and How to Address It</h2>
+              <p class="card-excerpt">In today's world, waste management is a critical issue — and the mind is no exception.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 11. Aug 2025 — Thought pollution -->
+        <article class="w-card" data-category="mind">
+          <a href="https://medium.com/@anatiyoga/thought-pollution-unmasking-the-invisible-threat-within-9eae9406eee0"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Thoughts</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Mind</p>
+                <span class="card-date">Aug 21, 2025</span>
+              </div>
+              <h2 class="card-title">Thought Pollution: Unmasking the Invisible Threat Within</h2>
+              <p class="card-excerpt">Pollution threatens life on Earth — and an equally invisible pollution threatens the mind.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 12. Jul 2025 -->
+        <article class="w-card" data-category="awareness">
+          <a href="https://medium.com/@anatiyoga/when-hearts-disconnect-even-shouting-feels-distant-749e9ebf71f1"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <img src="https://miro.medium.com/v2/resize:fill:640:426/1*ULyjKUw3YidX8xfq8jNHeg.jpeg"
+                alt="When Hearts Disconnect"
+                onerror="this.parentNode.innerHTML='<div class=img-placeholder>Connection</div>'" />
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Awareness</p>
+                <span class="card-date">Jul 26, 2025</span>
+              </div>
+              <h2 class="card-title">When Hearts Disconnect, Even Shouting Feels Distant</h2>
+              <p class="card-excerpt">Why do we shout at those nearby but feel close to someone far away?</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 13. Jun 2025 -->
+        <article class="w-card" data-category="meditation">
+          <a href="https://medium.com/@anatiyoga/meditation-and-what-lies-beyond-walking-the-path-of-the-heart-96a33f914744"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <img src="https://miro.medium.com/v2/resize:fill:640:426/1*vUBk9GskYpOYV6-uIchLFQ@2x.jpeg"
+                alt="Meditation and What Lies Beyond"
+                onerror="this.parentNode.innerHTML='<div class=img-placeholder>Meditation</div>'" />
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Meditation</p>
+                <span class="card-date">Jun 8, 2025</span>
+              </div>
+              <h2 class="card-title">Meditation and What Lies Beyond: Walking the Path of the Heart</h2>
+              <p class="card-excerpt">Meditation is more than a tool for stress relief — it's a gateway to the heart.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 14. Apr 2025 -->
+        <article class="w-card" data-category="mind">
+          <a href="https://medium.com/@anatiyoga/food-for-thought-can-fewer-thoughts-mean-better-health-3d03c4eb0013"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <img src="https://miro.medium.com/v2/resize:fill:640:426/1*v5DroBzQdeEsLQTEvBYY7A.jpeg"
+                alt="Food for Thought"
+                onerror="this.parentNode.innerHTML='<div class=img-placeholder>Thoughts & Health</div>'" />
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Mind</p>
+                <span class="card-date">Apr 19, 2025</span>
+              </div>
+              <h2 class="card-title">Food for Thought: Can Fewer Thoughts Mean Better Health?</h2>
+              <p class="card-excerpt">Have you ever wondered how much energy is required just to think?</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 15. Feb 2025 -->
+        <article class="w-card" data-category="life">
+          <a href="https://medium.com/@anatiyoga/the-art-of-doing-nothing-cfed74702c0d"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Rest · Stillness</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Life</p>
+                <span class="card-date">Feb 18, 2025</span>
+              </div>
+              <h2 class="card-title">The Art of Doing Nothing</h2>
+              <p class="card-excerpt">In our fast-paced world, doing less reveals what truly matters.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 16. Jan 2025 -->
+        <article class="w-card" data-category="mind">
+          <a href="https://medium.com/@anatiyoga/the-face-as-the-mirror-of-the-mind-5d9391fdc0ad"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Mind · Expression</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Mind</p>
+                <span class="card-date">Jan 30, 2025</span>
+              </div>
+              <h2 class="card-title">The Face as the Mirror of the Mind</h2>
+              <p class="card-excerpt">Our facial expressions reveal what lies within — a simple but profound truth.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 17. Oct 2024 -->
+        <article class="w-card" data-category="yoga">
+          <a href="https://medium.com/@anatiyoga/a-yogic-journey-to-your-original-home-719a70b4595f"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Journey · Home</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Yoga</p>
+                <span class="card-date">Oct 31, 2024</span>
+              </div>
+              <h2 class="card-title">A Yogic Journey to Your Original Home</h2>
+              <p class="card-excerpt">Most of us travel outward. Yoga teaches the journey that truly matters is within.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 18. Sep 2024 -->
+        <article class="w-card" data-category="meditation">
+          <a href="https://medium.com/@anatiyoga/what-can-meditation-offer-you-32a72d587267"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <img src="https://miro.medium.com/v2/resize:fill:640:426/1*80fCr2-_uBdFK_gnVhRPjA.jpeg"
+                alt="What Can Meditation Offer You?"
+                onerror="this.parentNode.innerHTML='<div class=img-placeholder>Meditation</div>'" />
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Meditation</p>
+                <span class="card-date">Sep 17, 2024</span>
+              </div>
+              <h2 class="card-title">What Can Meditation Offer You?</h2>
+              <p class="card-excerpt">Meditation isn't only for the deeply spiritual — it has something to offer everyone.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 19. Feb 2024 -->
+        <article class="w-card" data-category="yoga">
+          <a href="https://medium.com/@anatiyoga/exploring-hatha-yoga-origins-techniques-and-spiritual-journey-028bfdf0495d"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Hatha Yoga</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Yoga</p>
+                <span class="card-date">Feb 10, 2024</span>
+              </div>
+              <h2 class="card-title">Exploring Hatha Yoga: Origins, Techniques, and Spiritual Journey</h2>
+              <p class="card-excerpt">In a world of countless yoga variations, Hatha remains the root — a return to essentials.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 20. Nov 2023 -->
+        <article class="w-card" data-category="life">
+          <a href="https://medium.com/@anatiyoga/embracing-thanksgiving-from-a-yogic-perspective-84f7c70dd45b"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Gratitude</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Life</p>
+                <span class="card-date">Nov 27, 2023</span>
+              </div>
+              <h2 class="card-title">Embracing Thanksgiving from a Yogic Perspective</h2>
+              <p class="card-excerpt">Thanksgiving holds the power to transform our daily lives — and yoga shows us how to live it every day.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 21. Oct 2023 -->
+        <article class="w-card" data-category="yoga">
+          <a href="https://medium.com/@anatiyoga/going-beyond-the-postures-the-deeper-aspects-of-yoga-1878f47bf086"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <div class="img-placeholder">Yoga · Depth</div>
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Yoga</p>
+                <span class="card-date">Oct 11, 2023</span>
+              </div>
+              <h2 class="card-title">Going Beyond the Postures: The Deeper Aspects of Yoga</h2>
+              <p class="card-excerpt">When we search yoga online, we see bodies in poses — but yoga is far more than that.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 22. Aug 2023 -->
+        <article class="w-card" data-category="yoga">
+          <a href="https://medium.com/@anatiyoga/unlocking-inner-happiness-a-journey-through-yoga-2d231adc5bd6"
+             target="_blank" rel="noopener" class="card-link-wrap">
+            <div class="card-image">
+              <img src="https://miro.medium.com/v2/resize:fit:800/1*-nTh-rIVQ1pj5gd_0E83Dw.jpeg"
+                alt="Unlocking Inner Happiness"
+                onerror="this.parentNode.innerHTML='<div class=img-placeholder>Happiness</div>'" />
+              <span class="external-badge">Medium ↗</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta-row">
+                <p class="card-category">Yoga</p>
+                <span class="card-date">Aug 18, 2023</span>
+              </div>
+              <h2 class="card-title">Unlocking Inner Happiness: A Journey through Yoga</h2>
+              <p class="card-excerpt">In the bustling world of today, yoga offers a way back to the joy that was always within.</p>
+              <span class="read-more">Read on Medium</span>
+            </div>
+          </a>
         </article>
 
       </div>
 
-      <!-- Pagination -->
-      <nav class="pagination" aria-label="Pagination">
-        <button class="page-btn page-btn-text" disabled>← Prev</button>
-        <button class="page-btn active">1</button>
-        <button class="page-btn">2</button>
-        <button class="page-btn">3</button>
-        <span class="page-btn" style="border:none; cursor:default;">…</span>
-        <button class="page-btn page-btn-text">Next →</button>
-      </nav>
+      <!-- Medium CTA -->
+      <div class="medium-cta mt-48">
+        <div class="divider" style="margin: 0 auto 24px;"></div>
+        <p class="body-text text-center">All 23 writings are published on Medium. Follow to get notified of new pieces.</p>
+        <div style="text-align:center; margin-top:20px;">
+          <a href="https://medium.com/@anatiyoga" target="_blank" rel="noopener" class="btn btn-outline">
+            Follow on Medium ↗
+          </a>
+        </div>
+      </div>
 
     </div>
   </section>
 
   <script>
-    // Category filter
     const tabs = document.querySelectorAll('.filter-tab');
     const cards = document.querySelectorAll('.w-card');
 
@@ -180,14 +521,9 @@
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-
         const filter = tab.dataset.filter;
         cards.forEach(card => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? '' : 'none';
         });
       });
     });
