@@ -136,9 +136,9 @@
 
   /* ---- FOOTER HTML ---- */
   const footerHTML = `
-  <footer style="background:#3d4438;color:rgba(255,255,255,0.6);padding:48px 0 32px;font-family:'Jost',sans-serif;">
+  <footer style="background:#3d4438;color:rgba(255,255,255,0.6);padding:32px 0 24px;font-family:'Jost',sans-serif;">
     <div style="max-width:1200px;margin:0 auto;padding:0 40px;">
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:32px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:48px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:32px;">
 
         <div>
           <div style="margin-bottom:12px;">${logoWhite}</div>
@@ -194,4 +194,3 @@
     });
   }
 })();
-
