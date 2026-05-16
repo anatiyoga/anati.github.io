@@ -1,0 +1,185 @@
+/* ============================================
+   ANATI — Home Page Styles
+   home.css
+   ============================================ */
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--nav-height);
+  background: var(--warm-white);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  background: var(--beige);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 45%;
+  padding: 80px 40px 80px max(40px, calc((100vw - 1200px) / 2 + 40px));
+}
+
+.hero-content .label {
+  display: block;
+}
+
+.hero-content .display-xl em {
+  font-style: italic;
+  color: var(--sage);
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 55%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-img-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* ============ FEATURED WRITINGS ============ */
+.featured-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.writings-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+/* ============ PHILOSOPHY STRIP ============ */
+.philosophy-strip {
+  background: var(--text-dark);
+  padding: 80px 0;
+  text-align: center;
+  position: relative;
+}
+
+.philosophy-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.philosophy-line {
+  width: 48px;
+  height: 1px;
+  background: var(--sage);
+  margin: 24px auto 0;
+}
+
+/* ============ JOURNAL PREVIEW ============ */
+.journal-preview-items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.journal-preview-item {
+  padding-left: 16px;
+  border-left: 2px solid var(--border-strong);
+}
+
+.journal-preview-item p {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--text-mid);
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.journal-date {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.journal-image-wrap {
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.journal-image-wrap img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .writings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .hero::before {
+    display: none;
+  }
+
+  .hero-content {
+    flex: none;
+    width: 100%;
+    padding: 60px 24px 40px;
+  }
+
+  .hero-image {
+    flex: none;
+    width: 100%;
+    height: 60vw;
+  }
+
+  .featured-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .writings-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  section > .container > div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}

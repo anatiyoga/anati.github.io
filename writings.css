@@ -1,0 +1,40 @@
+/* ============================================
+   ANATI — Writings Page Styles
+   writings.css
+   ============================================ */
+
+.writings-full-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 32px;
+}
+
+.w-card {
+  background: var(--warm-white);
+  cursor: pointer;
+  transition: transform var(--transition);
+}
+
+.w-card:hover {
+  transform: translateY(-4px);
+}
+
+.w-card .card-image {
+  aspect-ratio: 4/3;
+}
+
+.w-card:hover .card-image img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 1024px) {
+  .writings-full-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .writings-full-grid {
+    grid-template-columns: 1fr;
+  }
+}

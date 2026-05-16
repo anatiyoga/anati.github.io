@@ -1,0 +1,133 @@
+/* ============================================
+   ANATI — Contact Page Styles
+   contact.css
+   ============================================ */
+
+.contact-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: calc(var(--nav-height) + 80px) 0 80px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: start;
+}
+
+/* ============ INFO ============ */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-detail-icon {
+  color: var(--sage);
+  display: flex;
+  align-items: center;
+}
+
+.contact-detail-text {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  font-weight: 300;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a.contact-detail-text:hover {
+  color: var(--sage-dark);
+}
+
+/* ============ SOCIAL LINKS ============ */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-mid);
+  font-weight: 300;
+  text-decoration: none;
+  transition: color var(--transition);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.social-link:hover {
+  color: var(--sage-dark);
+}
+
+/* ============ FORM ============ */
+.contact-form-wrap {
+  background: var(--beige);
+  padding: 48px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.form-success {
+  margin-top: 16px;
+  font-size: 0.875rem;
+  color: var(--sage-dark);
+  font-weight: 400;
+  padding: 12px 16px;
+  background: rgba(135, 146, 126, 0.1);
+  border: 1px solid var(--sage);
+}
+
+.form-error {
+  margin-top: 16px;
+  font-size: 0.875rem;
+  color: #9b4a4a;
+  font-weight: 400;
+  padding: 12px 16px;
+  background: rgba(155, 74, 74, 0.06);
+  border: 1px solid rgba(155, 74, 74, 0.3);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-form-wrap {
+    padding: 28px 24px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

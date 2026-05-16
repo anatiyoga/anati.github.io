@@ -1,0 +1,151 @@
+/* ============================================
+   ANATI — Journal Page Styles
+   journal.css
+   ============================================ */
+
+.journal-header-inner {
+  max-width: 480px;
+}
+
+.journal-subhead {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* ============ LAYOUT ============ */
+.journal-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ============ ENTRIES ============ */
+.journal-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.journal-entry {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+  align-items: baseline;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background var(--transition);
+}
+
+.journal-entry:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.journal-entry-date {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-light);
+  padding-top: 4px;
+}
+
+.journal-entry-body {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.journal-entry-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.5;
+  flex: 1;
+  transition: color var(--transition);
+}
+
+.journal-entry:hover .journal-entry-text {
+  color: var(--sage-dark);
+}
+
+/* ============ SIDEBAR ============ */
+.journal-sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sidebar-block {
+  border: 1px solid var(--border);
+  padding: 24px;
+}
+
+.sidebar-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sidebar-writings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar-writing-link {
+  display: block;
+  text-decoration: none;
+  padding: 12px;
+  background: var(--beige);
+  transition: background var(--transition);
+}
+
+.sidebar-writing-link:hover {
+  background: var(--beige-dark);
+}
+
+.sidebar-writing-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text-dark);
+  line-height: 1.3;
+}
+
+.sidebar-quote-block {
+  background: var(--text-dark);
+  border-color: var(--text-dark);
+}
+
+.sidebar-quote {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .journal-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .journal-sidebar {
+    position: static;
+  }
+
+  .journal-entry {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
