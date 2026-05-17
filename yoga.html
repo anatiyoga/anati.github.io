@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yoga — ANATI</title>
+  <meta name="description" content="A mixed wellness yoga practice for body, mind and awareness. Explore the deeper aspects of yoga with a 7-day plan." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="yoga.css" />
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <section class="yoga-hero">
+    <div class="yoga-hero-image">
+      <img
+        src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&q=80&fit=crop&crop=center"
+        alt="Yoga — a path inward"
+        onerror="this.src='images/hero-bg.jpg'" />
+      <div class="yoga-hero-overlay"></div>
+    </div>
+    <div class="yoga-hero-content">
+      <span class="label" style="color:rgba(255,255,255,0.6);">Mind · Body · Awareness</span>
+      <h1 class="display-xl mt-16">
+        Yoga is not<br>
+        what you do.<br>
+        <em>It is what you become.</em>
+      </h1>
+    </div>
+  </section>
+
+  <!-- ============ INTRO ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="yoga-intro">
+        <div class="yoga-intro-text">
+          <span class="label">What is yoga</span>
+          <h2 class="display-md mt-16">Beyond the posture.<br>Into the self.</h2>
+          <div class="divider mt-24"></div>
+          <p class="mt-24">
+            Most people come to yoga through the body — through stretch, through breath, through the satisfying ache of a pose held one breath longer than comfortable. And that is a beautiful beginning.
+          </p>
+          <p>
+            But yoga — in its oldest, deepest sense — is not a physical practice. It is a practice of attention. Of returning, again and again, to what is actually happening in this moment, in this body, in this mind.
+          </p>
+          <p>
+            The postures are a doorway. What lies beyond them is the real journey — a journey toward stillness, toward clarity, toward the part of you that has always been whole.
+          </p>
+          <a href="writings.html" class="btn btn-outline mt-32">
+            Read the writings <span class="arrow-icon">→</span>
+          </a>
+        </div>
+        <div class="yoga-intro-image">
+          <img
+            src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&fit=crop&crop=center"
+            alt="Yoga practice"
+            onerror="this.src='images/post1.jpg'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BENEFITS ============ -->
+  <section class="section" style="background: var(--beige); padding-top: 80px; padding-bottom: 80px;">
+    <div class="container">
+      <div style="text-align:center; margin-bottom: 16px;">
+        <span class="label">Why practice</span>
+        <h2 class="display-md mt-16">What yoga offers you</h2>
+      </div>
+      <div class="benefits-grid">
+
+        <div class="benefit-card">
+          <span class="benefit-number">01</span>
+          <h3>Physical strength & flexibility</h3>
+          <p>Regular practice builds functional strength, improves posture, increases range of motion and reduces chronic tension held in the body.</p>
+        </div>
+
+        <div class="benefit-card">
+          <span class="benefit-number">02</span>
+          <h3>Mental clarity & calm</h3>
+          <p>The breath-movement connection trains the nervous system to find stillness even in difficulty. Anxiety softens. Focus sharpens.</p>
+        </div>
+
+        <div class="benefit-card">
+          <span class="benefit-number">03</span>
+          <h3>Deeper self-awareness</h3>
+          <p>The mat becomes a mirror. Over time you begin to notice patterns — in the body, in the mind — and gently, without force, they begin to shift.</p>
+        </div>
+
+        <div class="benefit-card">
+          <span class="benefit-number">04</span>
+          <h3>Improved breath & energy</h3>
+          <p>Pranayama — yogic breathing — increases lung capacity, balances the nervous system and moves energy through the body in ways that cannot be explained, only experienced.</p>
+        </div>
+
+        <div class="benefit-card">
+          <span class="benefit-number">05</span>
+          <h3>Better sleep & recovery</h3>
+          <p>Evening yoga practices signal the body to rest. The parasympathetic nervous system activates. Sleep deepens. Recovery accelerates.</p>
+        </div>
+
+        <div class="benefit-card">
+          <span class="benefit-number">06</span>
+          <h3>A practice for life</h3>
+          <p>Unlike many fitness practices, yoga grows with you. What you need at 25 is different from what you need at 55 — and yoga meets you exactly where you are.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ QUOTE STRIP ============ -->
+  <div class="yoga-quote-strip">
+    <div class="container">
+      <p>"Yoga is the journey of the self, through the self, to the self."</p>
+      <div style="width:40px;height:1px;background:var(--earth);margin:24px auto 0;"></div>
+      <p style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:16px;font-family:'Jost',sans-serif;font-style:normal;">The Bhagavad Gita</p>
+    </div>
+  </div>
+
+  <!-- ============ 7-DAY PLAN ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="plan-header">
+        <span class="label">Practice</span>
+        <h2 class="display-md mt-16">Your 7-day yoga plan</h2>
+        <p class="body-text mt-16" style="max-width:520px;margin-left:auto;margin-right:auto;">
+          A mixed wellness programme for all levels. Each day has a different focus — click to expand and explore the practice.
+        </p>
+      </div>
+
+      <div class="plan-grid">
+
+        <!-- Day 1 -->
+        <div class="plan-day active" data-day="1">
+          <div class="plan-day-header" onclick="toggleDay(this)">
+            <div class="plan-day-left">
+              <span class="plan-day-num">01</span>
+              <div>
+                <div class="plan-day-title">Foundation & Grounding</div>
+                <div class="plan-day-meta">30 min · All levels · Morning</div>
+              </div>
+            </div>
+            <span class="plan-day-toggle">+</span>
+          </div>
+          <div class="plan-day-body">
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;">Begin here. Build a strong foundation with fundamental poses that connect you to the earth and introduce conscious breathing.</p>
+            <div class="plan-poses">
+              <div class="pose-item">
+                <div class="pose-name">Mountain Pose (Tadasana)</div>
+                <div class="pose-duration">2 min each side</div>
+                <div class="pose-note">Stand tall, feet grounded, breathe deeply. Feel the earth beneath you.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Child's Pose (Balasana)</div>
+                <div class="pose-duration">3 min</div>
+                <div class="pose-note">Rest and surrender. Let the forehead meet the earth.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Cat-Cow (Marjaryasana)</div>
+                <div class="pose-duration">2 min</div>
+                <div class="pose-note">Synchronise movement with breath. Warm the spine gently.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Downward Dog (Adho Mukha)</div>
+                <div class="pose-duration">3 min</div>
+                <div class="pose-note">An inversion and a rest. Find length in the spine.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Warrior I (Virabhadrasana I)</div>
+                <div class="pose-duration">2 min each side</div>
+                <div class="pose-note">Stand in your power. Open the chest to the sky.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Corpse Pose (Savasana)</div>
+                <div class="pose-duration">5 min</div>
+                <div class="pose-note">The most important pose. Let the body absorb the practice.</div>
+              </div>
+            </div>
+            <div class="plan-day-note">Begin each session with 3 slow breaths. Let the inhale be an invitation. Let the exhale be a release.</div>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="plan-day" data-day="2">
+          <div class="plan-day-header" onclick="toggleDay(this)">
+            <div class="plan-day-left">
+              <span class="plan-day-num">02</span>
+              <div>
+                <div class="plan-day-title">Strength & Stability</div>
+                <div class="plan-day-meta">40 min · Beginner–Intermediate · Morning</div>
+              </div>
+            </div>
+            <span class="plan-day-toggle">+</span>
+          </div>
+          <div class="plan-day-body">
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;">Build functional strength through standing poses and core work. Strength in yoga is not force — it is steadiness.</p>
+            <div class="plan-poses">
+              <div class="pose-item">
+                <div class="pose-name">Warrior II (Virabhadrasana II)</div>
+                <div class="pose-duration">3 min each side</div>
+                <div class="pose-note">Open arms wide. Gaze forward with calm determination.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Triangle Pose (Trikonasana)</div>
+                <div class="pose-duration">2 min each side</div>
+                <div class="pose-note">Create space along the side body. Keep the chest open.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Plank Pose</div>
+                <div class="pose-duration">3 × 30 sec</div>
+                <div class="pose-note">Core engagement. Breathe steadily. Do not hold the breath.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Boat Pose (Navasana)</div>
+                <div class="pose-duration">3 × 30 sec</div>
+                <div class="pose-note">Find the balance point. Core active, spine long.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Chair Pose (Utkatasana)</div>
+                <div class="pose-duration">2 min</div>
+                <div class="pose-note">Thighs parallel, arms reaching. Find strength in discomfort.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Savasana</div>
+                <div class="pose-duration">5 min</div>
+                <div class="pose-note">Rest completely. Allow the effort to integrate.</div>
+              </div>
+            </div>
+            <div class="plan-day-note">Strength without rigidity. Effort without strain. Find the balance between doing and being.</div>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="plan-day" data-day="3">
+          <div class="plan-day-header" onclick="toggleDay(this)">
+            <div class="plan-day-left">
+              <span class="plan-day-num">03</span>
+              <div>
+                <div class="plan-day-title">Opening & Flexibility</div>
+                <div class="plan-day-meta">35 min · All levels · Anytime</div>
+              </div>
+            </div>
+            <span class="plan-day-toggle">+</span>
+          </div>
+          <div class="plan-day-body">
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;">Release stored tension from hips, hamstrings and shoulders. Flexibility is not about force — it is about patient, consistent opening.</p>
+            <div class="plan-poses">
+              <div class="pose-item">
+                <div class="pose-name">Seated Forward Fold (Paschimottanasana)</div>
+                <div class="pose-duration">3 min</div>
+                <div class="pose-note">Fold forward with a long spine. Do not round the back.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Pigeon Pose (Eka Pada)</div>
+                <div class="pose-duration">3 min each side</div>
+                <div class="pose-note">A deep hip opener. Breathe into resistance. Do not force.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Butterfly Pose (Baddha Konasana)</div>
+                <div class="pose-duration">3 min</div>
+                <div class="pose-note">Inner groin and hips. Let gravity do the work.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Thread the Needle</div>
+                <div class="pose-duration">2 min each side</div>
+                <div class="pose-note">Upper back and shoulder release. Exhale into the twist.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Supine Twist (Supta Matsyendrasana)</div>
+                <div class="pose-duration">2 min each side</div>
+                <div class="pose-note">Detoxifying and releasing. Let the shoulders stay grounded.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Legs Up the Wall (Viparita Karani)</div>
+                <div class="pose-duration">5 min</div>
+                <div class="pose-note">Restorative inversion. Excellent for recovery and calm.</div>
+              </div>
+            </div>
+            <div class="plan-day-note">The body opens when the mind softens. Flexibility begins with the breath, not the stretch.</div>
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="plan-day" data-day="4">
+          <div class="plan-day-header" onclick="toggleDay(this)">
+            <div class="plan-day-left">
+              <span class="plan-day-num">04</span>
+              <div>
+                <div class="plan-day-title">Rest & Restore</div>
+                <div class="plan-day-meta">25 min · All levels · Evening</div>
+              </div>
+            </div>
+            <span class="plan-day-toggle">+</span>
+          </div>
+          <div class="plan-day-body">
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;">Rest is not weakness. It is wisdom. This gentle restorative practice allows the body to recover and the nervous system to reset.</p>
+            <div class="plan-poses">
+              <div class="pose-item">
+                <div class="pose-name">Supported Child's Pose</div>
+                <div class="pose-duration">5 min</div>
+                <div class="pose-note">Place a bolster or folded blanket under the chest. Surrender completely.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Reclined Bound Angle (Supta Baddha)</div>
+                <div class="pose-duration">5 min</div>
+                <div class="pose-note">Support the knees with blankets. Heart open, belly soft.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Supported Bridge (Setu Bandha)</div>
+                <div class="pose-duration">4 min</div>
+                <div class="pose-note">Block under the sacrum. Passive chest opener.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Supine Twist</div>
+                <div class="pose-duration">3 min each side</div>
+                <div class="pose-note">Gently wring out the spine. Breathe into each exhale.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Extended Savasana</div>
+                <div class="pose-duration">8 min</div>
+                <div class="pose-note">Cover yourself with a blanket. Let everything go.</div>
+              </div>
+            </div>
+            <div class="plan-day-note">Today, the practice is to do less. To allow rather than achieve. This is often the hardest practice of all.</div>
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="plan-day" data-day="5">
+          <div class="plan-day-header" onclick="toggleDay(this)">
+            <div class="plan-day-left">
+              <span class="plan-day-num">05</span>
+              <div>
+                <div class="plan-day-title">Balance & Focus</div>
+                <div class="plan-day-meta">40 min · Intermediate · Morning</div>
+              </div>
+            </div>
+            <span class="plan-day-toggle">+</span>
+          </div>
+          <div class="plan-day-body">
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;">Balance poses demand full presence. You cannot think about tomorrow while standing on one leg. This is their gift.</p>
+            <div class="plan-poses">
+              <div class="pose-item">
+                <div class="pose-name">Tree Pose (Vrksasana)</div>
+                <div class="pose-duration">3 min each side</div>
+                <div class="pose-note">Find a drishti — a soft, fixed gaze. Let it anchor you.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Warrior III (Virabhadrasana III)</div>
+                <div class="pose-duration">2 min each side</div>
+                <div class="pose-note">Body parallel to earth. One point of contact. Core engaged.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Eagle Pose (Garudasana)</div>
+                <div class="pose-duration">2 min each side</div>
+                <div class="pose-note">Wrap and squeeze. Then release into spaciousness.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Half Moon (Ardha Chandrasana)</div>
+                <div class="pose-duration">2 min each side</div>
+                <div class="pose-note">Open the chest to the sky. Trust the ground beneath you.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Dancer's Pose (Natarajasana)</div>
+                <div class="pose-duration">2 min each side</div>
+                <div class="pose-note">Grace and strength together. Find beauty in the wobble.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Savasana</div>
+                <div class="pose-duration">5 min</div>
+                <div class="pose-note">Release all effort. You have done enough.</div>
+              </div>
+            </div>
+            <div class="plan-day-note">Balance is not stillness — it is constant, tiny adjustments. Like life itself.</div>
+          </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="plan-day" data-day="6">
+          <div class="plan-day-header" onclick="toggleDay(this)">
+            <div class="plan-day-left">
+              <span class="plan-day-num">06</span>
+              <div>
+                <div class="plan-day-title">Breath & Meditation</div>
+                <div class="plan-day-meta">30 min · All levels · Any time</div>
+              </div>
+            </div>
+            <span class="plan-day-toggle">+</span>
+          </div>
+          <div class="plan-day-body">
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;">A practice of pranayama and seated meditation. The body is mostly still today. The work is entirely within.</p>
+            <div class="plan-poses">
+              <div class="pose-item">
+                <div class="pose-name">Natural Breath Observation</div>
+                <div class="pose-duration">5 min</div>
+                <div class="pose-note">Simply watch the breath. Do not change it. Just notice.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Box Breathing (4-4-4-4)</div>
+                <div class="pose-duration">5 min</div>
+                <div class="pose-note">Inhale 4 counts, hold 4, exhale 4, hold 4. Nervous system reset.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Alternate Nostril (Nadi Shodhana)</div>
+                <div class="pose-duration">5 min</div>
+                <div class="pose-note">Balance left and right hemispheres. Creates immediate calm.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Humming Bee Breath (Bhramari)</div>
+                <div class="pose-duration">3 min</div>
+                <div class="pose-note">Close ears with thumbs. Hum on exhale. Feel the vibration.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Silent Meditation</div>
+                <div class="pose-duration">10 min</div>
+                <div class="pose-note">Sit comfortably. Watch thoughts without following them.</div>
+              </div>
+            </div>
+            <div class="plan-day-note">The breath is always available. It is the one anchor that never leaves us. Learn to trust it.</div>
+          </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="plan-day" data-day="7">
+          <div class="plan-day-header" onclick="toggleDay(this)">
+            <div class="plan-day-left">
+              <span class="plan-day-num">07</span>
+              <div>
+                <div class="plan-day-title">Integration & Gratitude</div>
+                <div class="plan-day-meta">45 min · All levels · Morning</div>
+              </div>
+            </div>
+            <span class="plan-day-toggle">+</span>
+          </div>
+          <div class="plan-day-body">
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;">The final day brings everything together. A full practice that honours the body, calms the mind and opens the heart.</p>
+            <div class="plan-poses">
+              <div class="pose-item">
+                <div class="pose-name">Sun Salutation A (Surya A)</div>
+                <div class="pose-duration">3 rounds</div>
+                <div class="pose-note">The complete sequence. Breath leads movement throughout.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Sun Salutation B (Surya B)</div>
+                <div class="pose-duration">2 rounds</div>
+                <div class="pose-note">Add Warrior I. Build heat and intention.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Camel Pose (Ustrasana)</div>
+                <div class="pose-duration">2 min</div>
+                <div class="pose-note">Heart opener. Vulnerable and powerful simultaneously.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Seated Forward Fold</div>
+                <div class="pose-duration">3 min</div>
+                <div class="pose-note">Turn inward. Let the forward fold be a bow of gratitude.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Happy Baby (Ananda Balasana)</div>
+                <div class="pose-duration">3 min</div>
+                <div class="pose-note">Playful and grounding. Remember you are allowed joy.</div>
+              </div>
+              <div class="pose-item">
+                <div class="pose-name">Extended Savasana</div>
+                <div class="pose-duration">10 min</div>
+                <div class="pose-note">You have completed the week. Rest in that completion.</div>
+              </div>
+            </div>
+            <div class="plan-day-note">Begin again tomorrow. The practice has no end — only a deeper beginning. This is the gift of yoga.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="nav.js"></script>
+
+  <script>
+    function toggleDay(header) {
+      const day = header.closest('.plan-day');
+      const isActive = day.classList.contains('active');
+      // Close all
+      document.querySelectorAll('.plan-day').forEach(d => d.classList.remove('active'));
+      // Open clicked if it wasn't active
+      if (!isActive) day.classList.add('active');
+    }
+  </script>
+
+</body>
+</html>

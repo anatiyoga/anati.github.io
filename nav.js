@@ -106,8 +106,9 @@
       <ul class="anati-nav-links">
         <li><a href="index.html" class="${isActive('index.html')}">Home</a></li>
         <li><a href="writings.html" class="${isActive('writings.html')}">Writings</a></li>
+        <li><a href="yoga.html" class="${isActive('yoga.html')}">Yoga</a></li>
+        <li><a href="nutrition.html" class="${isActive('nutrition.html')}">Nutrition</a></li>
         <li><a href="about.html" class="${isActive('about.html')}">About</a></li>
-        <li><a href="journal.html" class="${isActive('journal.html')}">Journal</a></li>
         <li><a href="contact.html" class="${isActive('contact.html')}">Contact</a></li>
       </ul>
       <div class="anati-nav-social">
@@ -129,8 +130,9 @@
   <div class="anati-mobile-menu" id="anatiMobileMenu">
     <a href="index.html" class="${isActive('index.html')}">Home</a>
     <a href="writings.html" class="${isActive('writings.html')}">Writings</a>
+    <a href="yoga.html" class="${isActive('yoga.html')}">Yoga</a>
+    <a href="nutrition.html" class="${isActive('nutrition.html')}">Nutrition</a>
     <a href="about.html" class="${isActive('about.html')}">About</a>
-    <a href="journal.html" class="${isActive('journal.html')}">Journal</a>
     <a href="contact.html" class="${isActive('contact.html')}">Contact</a>
   </div>`;
 
@@ -150,8 +152,9 @@
           <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;">
             <li><a href="index.html" style="font-size:0.875rem;color:rgba(255,255,255,0.6);text-decoration:none;">Home</a></li>
             <li><a href="writings.html" style="font-size:0.875rem;color:rgba(255,255,255,0.6);text-decoration:none;">Writings</a></li>
+            <li><a href="yoga.html" style="font-size:0.875rem;color:rgba(255,255,255,0.6);text-decoration:none;">Yoga</a></li>
+            <li><a href="nutrition.html" style="font-size:0.875rem;color:rgba(255,255,255,0.6);text-decoration:none;">Nutrition</a></li>
             <li><a href="about.html" style="font-size:0.875rem;color:rgba(255,255,255,0.6);text-decoration:none;">About</a></li>
-            <li><a href="journal.html" style="font-size:0.875rem;color:rgba(255,255,255,0.6);text-decoration:none;">Journal</a></li>
             <li><a href="contact.html" style="font-size:0.875rem;color:rgba(255,255,255,0.6);text-decoration:none;">Contact</a></li>
           </ul>
         </div>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutrition — ANATI</title>
+  <meta name="description" content="Conscious eating for a more aware life. Tools for BMI, calorie needs and sample meal planning." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="nutrition.css" />
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <section class="nutrition-hero">
+    <div class="nutrition-hero-image">
+      <img
+        src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&q=80&fit=crop&crop=center"
+        alt="Conscious eating — nourishment for body and mind"
+        onerror="this.src='images/hero-bg.jpg'" />
+      <div class="nutrition-hero-overlay"></div>
+    </div>
+    <div class="nutrition-hero-content">
+      <span class="label" style="color:rgba(255,255,255,0.6);">Food · Awareness · Nourishment</span>
+      <h1 class="display-xl mt-16">
+        You are not just<br>
+        what you eat.<br>
+        <em>You are how you eat.</em>
+      </h1>
+    </div>
+  </section>
+
+  <!-- ============ INTRO ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="nutrition-intro">
+        <div class="nutrition-intro-text">
+          <span class="label">The philosophy</span>
+          <h2 class="display-md mt-16">Food as medicine.<br>Eating as practice.</h2>
+          <div class="divider mt-24"></div>
+          <p class="mt-24">
+            Modern nutrition science tells us what to eat. Ancient wisdom tells us something deeper — that how we eat, when we eat, and the awareness we bring to eating may matter just as much as what ends up on our plate.
+          </p>
+          <p>
+            In yoga, food is understood through the lens of prana — life force. Fresh, whole, seasonal food carries more prana than processed, stale or overly refined food. This is not a diet. It is a relationship.
+          </p>
+          <p>
+            The tools below are a starting point — data to inform, not rules to obey. Let them help you understand your body's needs. Then, over time, let your own awareness become the finest nutritional guide you have.
+          </p>
+        </div>
+        <div class="nutrition-intro-image">
+          <img
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800&q=80&fit=crop&crop=center"
+            alt="Fresh wholesome food"
+            onerror="this.src='images/post2.jpg'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TOOLS ============ -->
+  <section class="tools-section">
+    <div class="container">
+      <div class="tools-intro">
+        <span class="label">Wellness tools</span>
+        <h2 class="display-md mt-16">Know your numbers</h2>
+        <p class="body-text mt-16" style="max-width:480px;margin-left:auto;margin-right:auto;">
+          Simple calculators to help you understand your body. Click each tool to expand.
+        </p>
+      </div>
+
+      <div class="tools-grid">
+
+        <!-- ====== TOOL 1: BMI ====== -->
+        <div class="tool-accordion open" id="bmiTool">
+          <div class="tool-header" onclick="toggleTool('bmiTool')">
+            <div class="tool-header-left">
+              <div class="tool-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="tool-title">BMI Calculator</div>
+                <div class="tool-subtitle">Body Mass Index · Metric</div>
+              </div>
+            </div>
+            <span class="tool-toggle">+</span>
+          </div>
+          <div class="tool-body">
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;max-width:560px;margin-bottom:28px;">
+              BMI is a simple screening tool — a starting point, not a definitive measure of health. It does not account for muscle mass, bone density or individual body composition.
+            </p>
+            <div class="tool-form">
+              <div>
+                <label class="tool-label" for="bmiWeight">Weight (kg)</label>
+                <input class="tool-input" type="number" id="bmiWeight" placeholder="e.g. 70" min="30" max="250" />
+              </div>
+              <div>
+                <label class="tool-label" for="bmiHeight">Height (cm)</label>
+                <input class="tool-input" type="number" id="bmiHeight" placeholder="e.g. 170" min="100" max="250" />
+              </div>
+            </div>
+            <button class="tool-btn" onclick="calculateBMI()">Calculate BMI →</button>
+
+            <div class="tool-result" id="bmiResult">
+              <div class="result-main" id="bmiValue">—<span class="result-unit">BMI</span></div>
+              <div class="result-label" id="bmiCategory">—</div>
+              <div class="result-ranges" style="margin-top:24px;">
+                <div class="result-range">
+                  <div class="result-range-label">Underweight</div>
+                  <div class="result-range-value">Below 18.5</div>
+                </div>
+                <div class="result-range" id="rangeNormal">
+                  <div class="result-range-label">Normal</div>
+                  <div class="result-range-value">18.5 – 24.9</div>
+                </div>
+                <div class="result-range" id="rangeOverweight">
+                  <div class="result-range-label">Overweight</div>
+                  <div class="result-range-value">25 – 29.9</div>
+                </div>
+                <div class="result-range" id="rangeObese">
+                  <div class="result-range-label">Obese</div>
+                  <div class="result-range-value">30 and above</div>
+                </div>
+              </div>
+              <div class="result-detail" id="bmiNote"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====== TOOL 2: CALORIE CALCULATOR ====== -->
+        <div class="tool-accordion" id="calorieTool">
+          <div class="tool-header" onclick="toggleTool('calorieTool')">
+            <div class="tool-header-left">
+              <div class="tool-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <div>
+                <div class="tool-title">Daily Calorie Calculator</div>
+                <div class="tool-subtitle">TDEE · Total Daily Energy Expenditure</div>
+              </div>
+            </div>
+            <span class="tool-toggle">+</span>
+          </div>
+          <div class="tool-body">
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;max-width:560px;margin-bottom:28px;">
+              Your TDEE is the total number of calories your body needs each day based on your activity level. This is your maintenance number — adjust up or down depending on your goals.
+            </p>
+            <div class="tool-form">
+              <div>
+                <label class="tool-label" for="calAge">Age</label>
+                <input class="tool-input" type="number" id="calAge" placeholder="e.g. 30" min="15" max="90" />
+              </div>
+              <div>
+                <label class="tool-label" for="calGender">Gender</label>
+                <select class="tool-select" id="calGender">
+                  <option value="">Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+              <div>
+                <label class="tool-label" for="calWeight">Weight (kg)</label>
+                <input class="tool-input" type="number" id="calWeight" placeholder="e.g. 70" min="30" max="250" />
+              </div>
+              <div>
+                <label class="tool-label" for="calHeight">Height (cm)</label>
+                <input class="tool-input" type="number" id="calHeight" placeholder="e.g. 170" min="100" max="250" />
+              </div>
+              <div class="tool-form-full">
+                <label class="tool-label" for="calActivity">Activity Level</label>
+                <select class="tool-select" id="calActivity">
+                  <option value="">Select your activity level</option>
+                  <option value="1.2">Sedentary — little or no exercise</option>
+                  <option value="1.375">Lightly active — light exercise 1–3 days/week</option>
+                  <option value="1.55">Moderately active — moderate exercise 3–5 days/week</option>
+                  <option value="1.725">Very active — hard exercise 6–7 days/week</option>
+                  <option value="1.9">Extra active — very hard exercise, physical job</option>
+                </select>
+              </div>
+              <div class="tool-form-full">
+                <label class="tool-label" for="calGoal">Goal</label>
+                <select class="tool-select" id="calGoal">
+                  <option value="maintain">Maintain weight</option>
+                  <option value="lose">Lose weight (moderate deficit)</option>
+                  <option value="gain">Gain weight (moderate surplus)</option>
+                </select>
+              </div>
+            </div>
+            <button class="tool-btn" onclick="calculateCalories()">Calculate Calories →</button>
+
+            <div class="tool-result" id="calorieResult">
+              <div class="result-main" id="calorieValue">—<span class="result-unit">kcal/day</span></div>
+              <div class="result-label" id="calorieGoalLabel">—</div>
+              <div class="result-ranges" style="margin-top:24px;">
+                <div class="result-range">
+                  <div class="result-range-label">Lose weight</div>
+                  <div class="result-range-value" id="rangeLose">—</div>
+                </div>
+                <div class="result-range" id="rangeMaintainBox">
+                  <div class="result-range-label">Maintain</div>
+                  <div class="result-range-value" id="rangeMaintain">—</div>
+                </div>
+                <div class="result-range">
+                  <div class="result-range-label">Gain weight</div>
+                  <div class="result-range-value" id="rangeGain">—</div>
+                </div>
+              </div>
+              <div class="result-detail" id="calorieNote"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====== TOOL 3: SAMPLE MENU ====== -->
+        <div class="tool-accordion" id="menuTool">
+          <div class="tool-header" onclick="toggleTool('menuTool')">
+            <div class="tool-header-left">
+              <div class="tool-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M3 3h18v18H3z" rx="2"/>
+                  <path d="M3 9h18M9 21V9"/>
+                </svg>
+              </div>
+              <div>
+                <div class="tool-title">Sample Menu Planner</div>
+                <div class="tool-subtitle">3-day balanced meal plan</div>
+              </div>
+            </div>
+            <span class="tool-toggle">+</span>
+          </div>
+          <div class="tool-body">
+            <p style="font-size:0.875rem;color:var(--text-mid);line-height:1.7;max-width:560px;margin-bottom:28px;">
+              Enter your daily calorie target to generate a 3-day sample menu. These are suggestions — adapt them to your preferences, culture and what is available to you.
+            </p>
+            <div class="tool-form">
+              <div>
+                <label class="tool-label" for="menuCalories">Daily Calorie Target (kcal)</label>
+                <input class="tool-input" type="number" id="menuCalories" placeholder="e.g. 1800" min="1200" max="4000" />
+              </div>
+              <div>
+                <label class="tool-label" for="menuDiet">Dietary Preference</label>
+                <select class="tool-select" id="menuDiet">
+                  <option value="balanced">Balanced (all foods)</option>
+                  <option value="vegetarian">Vegetarian</option>
+                  <option value="vegan">Vegan</option>
+                </select>
+              </div>
+            </div>
+            <button class="tool-btn" onclick="generateMenu()">Generate Menu →</button>
+            <div class="menu-result" id="menuResult"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRINCIPLES ============ -->
+  <section class="section">
+    <div class="container">
+      <span class="label">Yogic nutrition</span>
+      <h2 class="display-md mt-16">Six principles of<br>conscious eating</h2>
+      <div class="principles-grid">
+        <div class="principle-item">
+          <h3>Eat with awareness</h3>
+          <p>Put down the phone. Turn off the screen. Sit. Taste. Be present with your food. The act of eating deserves the same attention you would give to meditation.</p>
+        </div>
+        <div class="principle-item">
+          <h3>Choose whole, living foods</h3>
+          <p>Fresh vegetables, whole grains, legumes, fruits and nuts carry more vitality than processed, packaged or refined alternatives. Your energy reflects the energy of what you consume.</p>
+        </div>
+        <div class="principle-item">
+          <h3>Eat to 80% full</h3>
+          <p>The Japanese principle of Hara Hachi Bu — eat until you are 80% full. Leave space. The body digests better, the mind stays clearer, and energy does not collapse after meals.</p>
+        </div>
+        <div class="principle-item">
+          <h3>Honour your hunger signals</h3>
+          <p>Learn the difference between true hunger and emotional hunger. Eat when genuinely hungry. Stop when genuinely satisfied. The body knows — if you listen.</p>
+        </div>
+        <div class="principle-item">
+          <h3>Cook with intention</h3>
+          <p>In Ayurvedic tradition, the energy of the cook enters the food. Preparing your own meals with care and presence is itself a form of nourishment.</p>
+        </div>
+        <div class="principle-item">
+          <h3>Stay hydrated, stay light</h3>
+          <p>Water is life. Begin each morning with warm water and lemon. Drink throughout the day. A well-hydrated body thinks more clearly, moves more freely, and rests more deeply.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="nav.js"></script>
+
+  <script>
+    /* ======== TOOL TOGGLE ======== */
+    function toggleTool(id) {
+      const tool = document.getElementById(id);
+      const isOpen = tool.classList.contains('open');
+      document.querySelectorAll('.tool-accordion').forEach(t => t.classList.remove('open'));
+      if (!isOpen) tool.classList.add('open');
+    }
+
+    /* ======== BMI CALCULATOR ======== */
+    function calculateBMI() {
+      const weight = parseFloat(document.getElementById('bmiWeight').value);
+      const height = parseFloat(document.getElementById('bmiHeight').value) / 100;
+
+      if (!weight || !height || weight < 30 || height < 1) {
+        alert('Please enter valid weight and height values.');
+        return;
+      }
+
+      const bmi = (weight / (height * height)).toFixed(1);
+      let category = '';
+      let note = '';
+      let highlightRange = '';
+
+      if (bmi < 18.5) {
+        category = 'Underweight';
+        note = 'You may benefit from increasing your calorie intake with nutrient-dense foods. Consider speaking with a healthcare professional.';
+        highlightRange = 'rangeUnder';
+      } else if (bmi < 25) {
+        category = 'Normal weight — a healthy range';
+        note = 'Your BMI falls within the healthy range. Focus on maintaining a balanced diet and regular physical activity to stay here.';
+        highlightRange = 'rangeNormal';
+      } else if (bmi < 30) {
+        category = 'Overweight';
+        note = 'A modest reduction in calorie intake combined with increased physical activity can help move toward a healthier range.';
+        highlightRange = 'rangeOverweight';
+      } else {
+        category = 'Obese — consider speaking with a professional';
+        note = 'Please consult a healthcare professional for personalised guidance. Small, consistent changes over time make the greatest difference.';
+        highlightRange = 'rangeObese';
+      }
+
+      document.getElementById('bmiValue').innerHTML = bmi + '<span class="result-unit">BMI</span>';
+      document.getElementById('bmiCategory').textContent = category;
+      document.getElementById('bmiNote').textContent = note;
+
+      ['rangeNormal','rangeOverweight','rangeObese'].forEach(id => {
+        document.getElementById(id)?.classList.remove('highlight');
+      });
+      document.getElementById(highlightRange)?.classList.add('highlight');
+
+      document.getElementById('bmiResult').classList.add('visible');
+    }
+
+    /* ======== CALORIE CALCULATOR (Mifflin-St Jeor) ======== */
+    function calculateCalories() {
+      const age = parseFloat(document.getElementById('calAge').value);
+      const gender = document.getElementById('calGender').value;
+      const weight = parseFloat(document.getElementById('calWeight').value);
+      const height = parseFloat(document.getElementById('calHeight').value);
+      const activity = parseFloat(document.getElementById('calActivity').value);
+      const goal = document.getElementById('calGoal').value;
+
+      if (!age || !gender || !weight || !height || !activity) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      let bmr;
+      if (gender === 'male') {
+        bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+      } else {
+        bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+      }
+
+      const tdee = Math.round(bmr * activity);
+      const lose = Math.round(tdee - 400);
+      const gain = Math.round(tdee + 400);
+
+      let targetCalories = tdee;
+      let goalLabel = 'Maintenance — daily calorie target';
+
+      if (goal === 'lose') {
+        targetCalories = lose;
+        goalLabel = 'Weight loss — moderate deficit of ~400 kcal';
+      } else if (goal === 'gain') {
+        targetCalories = gain;
+        goalLabel = 'Weight gain — moderate surplus of ~400 kcal';
+      }
+
+      document.getElementById('calorieValue').innerHTML = targetCalories + '<span class="result-unit">kcal/day</span>';
+      document.getElementById('calorieGoalLabel').textContent = goalLabel;
+      document.getElementById('rangeLose').textContent = lose + ' kcal';
+      document.getElementById('rangeMaintain').textContent = tdee + ' kcal';
+      document.getElementById('rangeGain').textContent = gain + ' kcal';
+      document.getElementById('calorieNote').textContent = 'These numbers are estimates based on the Mifflin-St Jeor equation — the most validated formula for most people. Actual needs vary based on genetics, health conditions and hormones.';
+
+      const highlightId = goal === 'lose' ? 'rangeLose' : (goal === 'gain' ? 'rangeGain' : 'rangeMaintainBox');
+      document.querySelectorAll('#calorieResult .result-range').forEach(r => r.classList.remove('highlight'));
+
+      document.getElementById('calorieResult').classList.add('visible');
+    }
+
+    /* ======== MENU GENERATOR ======== */
+    const menus = {
+      balanced: {
+        1: {
+          breakfast: { name: 'Oats with berries & honey', cal: 320, desc: 'Rolled oats, mixed berries, a drizzle of raw honey, handful of walnuts' },
+          lunch: { name: 'Grilled chicken salad', cal: 420, desc: 'Grilled chicken breast, mixed greens, cucumber, tomato, olive oil dressing' },
+          snack: { name: 'Apple with almond butter', cal: 200, desc: 'One medium apple, two tablespoons of natural almond butter' },
+          dinner: { name: 'Baked salmon with vegetables', cal: 480, desc: 'Baked salmon fillet, roasted sweet potato, steamed broccoli, lemon' }
+        },
+        2: {
+          breakfast: { name: 'Eggs & wholegrain toast', cal: 360, desc: 'Two scrambled eggs, two slices wholegrain toast, sliced avocado' },
+          lunch: { name: 'Lentil soup with bread', cal: 380, desc: 'Red lentil soup with cumin and coriander, one slice wholegrain bread' },
+          snack: { name: 'Greek yoghurt & nuts', cal: 180, desc: 'Full-fat Greek yoghurt, mixed nuts, pinch of cinnamon' },
+          dinner: { name: 'Stir-fried tofu & brown rice', cal: 460, desc: 'Firm tofu, brown rice, mixed vegetables, ginger, soy sauce, sesame oil' }
+        },
+        3: {
+          breakfast: { name: 'Smoothie bowl', cal: 340, desc: 'Blended banana, spinach, berries, topped with granola, coconut and seeds' },
+          lunch: { name: 'Chickpea & quinoa bowl', cal: 440, desc: 'Roasted chickpeas, quinoa, roasted peppers, tahini dressing, fresh herbs' },
+          snack: { name: 'Hummus & vegetable sticks', cal: 160, desc: 'Homemade hummus with carrot, celery and cucumber sticks' },
+          dinner: { name: 'Chicken curry with basmati', cal: 520, desc: 'Chicken breast curry with tomatoes, onions, spices and basmati rice' }
+        }
+      },
+      vegetarian: {
+        1: {
+          breakfast: { name: 'Oats with banana & seeds', cal: 340, desc: 'Rolled oats, sliced banana, chia seeds, almond milk, maple syrup' },
+          lunch: { name: 'Paneer & spinach wrap', cal: 400, desc: 'Grilled paneer, wilted spinach, mint chutney, wholemeal wrap' },
+          snack: { name: 'Mixed nuts & dried fruit', cal: 190, desc: 'Almonds, cashews, walnuts with a small handful of raisins' },
+          dinner: { name: 'Dal makhani with rice', cal: 480, desc: 'Black lentil dal, basmati rice, raita, one wholemeal roti' }
+        },
+        2: {
+          breakfast: { name: 'Avocado toast & eggs', cal: 380, desc: 'Wholegrain toast, smashed avocado, two poached eggs, chilli flakes' },
+          lunch: { name: 'Tomato soup with cheese toast', cal: 360, desc: 'Homemade tomato basil soup, wholegrain toast with melted cheese' },
+          snack: { name: 'Fruit & yoghurt', cal: 170, desc: 'Seasonal fruit with full-fat Greek yoghurt and a drizzle of honey' },
+          dinner: { name: 'Vegetable pasta bake', cal: 490, desc: 'Wholemeal pasta, roasted vegetables, tomato sauce, mozzarella' }
+        },
+        3: {
+          breakfast: { name: 'Idli with sambar', cal: 300, desc: 'Three steamed idli, vegetable sambar, coconut chutney' },
+          lunch: { name: 'Buddha bowl', cal: 430, desc: 'Brown rice, roasted chickpeas, avocado, cucumber, tahini, sprouts' },
+          snack: { name: 'Cheese & oatcakes', cal: 200, desc: 'Two oatcakes with cottage cheese, cucumber slices' },
+          dinner: { name: 'Mushroom & lentil stew', cal: 440, desc: 'Porcini mushrooms, green lentils, root vegetables, fresh thyme, crusty bread' }
+        }
+      },
+      vegan: {
+        1: {
+          breakfast: { name: 'Chia pudding with mango', cal: 310, desc: 'Chia seeds soaked in coconut milk, topped with fresh mango and lime zest' },
+          lunch: { name: 'Falafel & tabbouleh wrap', cal: 420, desc: 'Baked falafel, tabbouleh, hummus, pickled vegetables in a flatbread' },
+          snack: { name: 'Edamame with sea salt', cal: 150, desc: 'Steamed edamame pods with a pinch of sea salt' },
+          dinner: { name: 'Tofu Thai green curry', cal: 480, desc: 'Firm tofu, Thai green curry, jasmine rice, bok choy, fresh coriander' }
+        },
+        2: {
+          breakfast: { name: 'Peanut butter banana oats', cal: 380, desc: 'Oats, oat milk, banana, natural peanut butter, flaxseeds' },
+          lunch: { name: 'Sweet potato & black bean bowl', cal: 400, desc: 'Roasted sweet potato, black beans, corn, avocado, lime dressing' },
+          snack: { name: 'Rice cakes with tahini', cal: 160, desc: 'Two rice cakes with tahini and sliced cucumber' },
+          dinner: { name: 'Mushroom & lentil bolognese', cal: 440, desc: 'Lentils, mushrooms, tomatoes, herbs, wholemeal spaghetti' }
+        },
+        3: {
+          breakfast: { name: 'Green smoothie bowl', cal: 320, desc: 'Spinach, banana, mango, topped with granola, coconut flakes, seeds' },
+          lunch: { name: 'Roasted vegetable & quinoa', cal: 390, desc: 'Seasonal roasted vegetables, quinoa, pine nuts, lemon tahini dressing' },
+          snack: { name: 'Apple & almond butter', cal: 190, desc: 'Sliced apple with two tablespoons of almond butter' },
+          dinner: { name: 'Chickpea tikka masala', cal: 460, desc: 'Chickpeas in spiced tomato sauce, basmati rice, naan bread, fresh coriander' }
+        }
+      }
+    };
+
+    function generateMenu() {
+      const calories = parseFloat(document.getElementById('menuCalories').value);
+      const diet = document.getElementById('menuDiet').value;
+
+      if (!calories || calories < 1200 || calories > 4000) {
+        alert('Please enter a daily calorie target between 1200 and 4000.');
+        return;
+      }
+
+      const scaleFactor = calories / 1400;
+      const menuData = menus[diet];
+      const resultEl = document.getElementById('menuResult');
+
+      let html = `<p style="font-size:0.875rem;color:var(--text-mid);margin-bottom:28px;line-height:1.7;">Sample 3-day menu for <strong>${Math.round(calories)} kcal/day</strong> — ${diet} plan. Portions are adjusted to your target.</p>`;
+
+      for (let day = 1; day <= 3; day++) {
+        const d = menuData[day];
+        const totalCal = Math.round((d.breakfast.cal + d.lunch.cal + d.snack.cal + d.dinner.cal) * scaleFactor);
+
+        html += `
+          <div class="menu-day">
+            <div class="menu-day-title">Day ${day} <span style="font-size:0.75rem;font-family:'Jost',sans-serif;font-style:normal;color:var(--text-light);letter-spacing:0.08em;text-transform:uppercase;margin-left:12px;">~${totalCal} kcal</span></div>
+            <div class="menu-meals">
+              ${mealCard('Breakfast', d.breakfast, scaleFactor)}
+              ${mealCard('Lunch', d.lunch, scaleFactor)}
+              ${mealCard('Snack', d.snack, scaleFactor)}
+              ${mealCard('Dinner', d.dinner, scaleFactor)}
+            </div>
+          </div>`;
+      }
+
+      html += `<p style="font-size:0.8rem;color:var(--text-light);margin-top:24px;font-style:italic;">These are suggestions only. Adjust portions, swap ingredients and adapt to your culture, preferences and what is seasonally available to you.</p>`;
+
+      resultEl.innerHTML = html;
+      resultEl.classList.add('visible');
+    }
+
+    function mealCard(type, meal, scale) {
+      return `
+        <div class="menu-meal">
+          <div class="menu-meal-type">${type}</div>
+          <div class="menu-meal-name">${meal.name}</div>
+          <div class="menu-meal-cal">~${Math.round(meal.cal * scale)} kcal</div>
+          <div class="menu-meal-desc">${meal.desc}</div>
+        </div>`;
+    }
+  </script>
+
+</body>
+</html>

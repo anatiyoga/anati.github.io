@@ -1,0 +1,436 @@
+/* ============================================
+   ANATI — Nutrition Page Styles
+   nutrition.css
+   ============================================ */
+
+/* ============ HERO ============ */
+.nutrition-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.nutrition-hero-image {
+  position: absolute;
+  inset: 0;
+}
+
+.nutrition-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.nutrition-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(30, 30, 28, 0.80) 0%,
+    rgba(30, 30, 28, 0.2) 60%,
+    transparent 100%
+  );
+}
+
+.nutrition-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 60px max(40px, calc((100vw - 1200px) / 2 + 40px));
+  max-width: 700px;
+}
+
+.nutrition-hero-content h1 {
+  color: #fff;
+  margin-top: 16px;
+}
+
+.nutrition-hero-content h1 em {
+  color: var(--earth);
+  font-style: italic;
+}
+
+/* ============ INTRO ============ */
+.nutrition-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.nutrition-intro-text p {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.nutrition-intro-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+/* ============ TOOLS SECTION ============ */
+.tools-section {
+  background: var(--beige);
+  padding: 100px 0;
+}
+
+.tools-intro {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.tools-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ============ TOOL ACCORDION ============ */
+.tool-accordion {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.tool-accordion.open {
+  border-color: var(--sage);
+}
+
+.tool-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--transition);
+}
+
+.tool-header:hover {
+  background: var(--beige);
+}
+
+.tool-accordion.open .tool-header {
+  background: var(--beige);
+  border-bottom: 1px solid var(--border);
+}
+
+.tool-header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.tool-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tool-icon svg {
+  width: 22px;
+  height: 22px;
+  color: white;
+}
+
+.tool-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text-dark);
+}
+
+.tool-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.tool-toggle {
+  font-size: 1.4rem;
+  color: var(--sage);
+  transition: transform var(--transition);
+  font-family: var(--font-body);
+  font-weight: 300;
+}
+
+.tool-accordion.open .tool-toggle {
+  transform: rotate(45deg);
+}
+
+.tool-body {
+  display: none;
+  padding: 40px 32px;
+}
+
+.tool-accordion.open .tool-body {
+  display: block;
+}
+
+/* ============ TOOL FORM ============ */
+.tool-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 600px;
+}
+
+.tool-form-full {
+  grid-column: 1 / -1;
+}
+
+.tool-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+
+.tool-input,
+.tool-select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  background: var(--warm-white);
+  border: 1px solid var(--border-strong);
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color var(--transition);
+  -webkit-appearance: none;
+}
+
+.tool-input:focus,
+.tool-select:focus {
+  border-color: var(--sage);
+}
+
+.tool-btn {
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: 1px solid var(--text-dark);
+  background: var(--text-dark);
+  color: var(--warm-white);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.tool-btn:hover {
+  background: var(--sage-dark);
+  border-color: var(--sage-dark);
+}
+
+/* ============ TOOL RESULT ============ */
+.tool-result {
+  display: none;
+  margin-top: 32px;
+  padding: 32px;
+  background: var(--beige);
+  border-left: 4px solid var(--sage);
+}
+
+.tool-result.visible {
+  display: block;
+}
+
+.result-main {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1;
+}
+
+.result-unit {
+  font-size: 1.2rem;
+  color: var(--sage);
+  margin-left: 6px;
+}
+
+.result-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-top: 8px;
+}
+
+.result-detail {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+.result-ranges {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.result-range {
+  padding: 12px 16px;
+  background: var(--warm-white);
+  text-align: center;
+}
+
+.result-range-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 4px;
+}
+
+.result-range-value {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-dark);
+}
+
+.result-range.highlight {
+  background: var(--sage);
+}
+
+.result-range.highlight .result-range-label,
+.result-range.highlight .result-range-value {
+  color: white;
+}
+
+/* ============ MENU RESULT ============ */
+.menu-result {
+  display: none;
+  margin-top: 32px;
+}
+
+.menu-result.visible {
+  display: block;
+}
+
+.menu-day {
+  margin-bottom: 24px;
+}
+
+.menu-day-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.menu-meals {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.menu-meal {
+  background: var(--beige);
+  padding: 20px;
+  border-left: 3px solid var(--sage);
+}
+
+.menu-meal-type {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 8px;
+}
+
+.menu-meal-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+.menu-meal-cal {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.menu-meal-desc {
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* ============ PRINCIPLES ============ */
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.principle-item {
+  padding: 32px;
+  border: 1px solid var(--border);
+  transition: border-color var(--transition);
+}
+
+.principle-item:hover {
+  border-color: var(--sage);
+}
+
+.principle-item h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+}
+
+.principle-item p {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .result-ranges { grid-template-columns: repeat(2, 1fr); }
+  .menu-meals { grid-template-columns: repeat(2, 1fr); }
+  .principles-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .nutrition-intro { grid-template-columns: 1fr; gap: 40px; }
+  .tool-form { grid-template-columns: 1fr; }
+  .result-ranges { grid-template-columns: repeat(2, 1fr); }
+  .menu-meals { grid-template-columns: 1fr; }
+  .principles-grid { grid-template-columns: 1fr; }
+  .tool-header { padding: 20px 24px; }
+  .tool-body { padding: 28px 24px; }
+  .nutrition-hero-content { padding: 40px 24px; }
+}

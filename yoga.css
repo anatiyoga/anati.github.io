@@ -1,0 +1,290 @@
+/* ============================================
+   ANATI — Yoga Page Styles
+   yoga.css
+   ============================================ */
+
+/* ============ HERO ============ */
+.yoga-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.yoga-hero-image {
+  position: absolute;
+  inset: 0;
+}
+
+.yoga-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.yoga-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(30, 30, 28, 0.80) 0%,
+    rgba(30, 30, 28, 0.2) 60%,
+    transparent 100%
+  );
+}
+
+.yoga-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 60px max(40px, calc((100vw - 1200px) / 2 + 40px));
+  max-width: 700px;
+}
+
+.yoga-hero-content h1 {
+  color: #fff;
+  margin-top: 16px;
+}
+
+.yoga-hero-content h1 em {
+  color: var(--earth);
+  font-style: italic;
+}
+
+/* ============ INTRO ============ */
+.yoga-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.yoga-intro-text p {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.yoga-intro-image {
+  overflow: hidden;
+  position: relative;
+}
+
+.yoga-intro-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+/* ============ BENEFITS ============ */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+}
+
+.benefit-card {
+  background: var(--beige);
+  padding: 36px 28px;
+  transition: background var(--transition);
+}
+
+.benefit-card:hover {
+  background: var(--beige-dark);
+}
+
+.benefit-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--sage-light);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.benefit-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ============ 7-DAY PLAN ============ */
+.plan-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.plan-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.plan-day {
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.plan-day.active {
+  border-color: var(--sage);
+}
+
+.plan-day-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 28px;
+  cursor: pointer;
+  background: var(--warm-white);
+  transition: background var(--transition);
+  user-select: none;
+}
+
+.plan-day-header:hover {
+  background: var(--beige);
+}
+
+.plan-day.active .plan-day-header {
+  background: var(--beige);
+}
+
+.plan-day-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.plan-day-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--sage-light);
+  min-width: 40px;
+}
+
+.plan-day-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-dark);
+}
+
+.plan-day-meta {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.plan-day-toggle {
+  font-size: 1.2rem;
+  color: var(--sage);
+  transition: transform var(--transition);
+  font-family: var(--font-body);
+}
+
+.plan-day.active .plan-day-toggle {
+  transform: rotate(45deg);
+}
+
+.plan-day-body {
+  display: none;
+  padding: 0 28px 28px;
+  background: var(--beige);
+}
+
+.plan-day.active .plan-day-body {
+  display: block;
+}
+
+.plan-poses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.pose-item {
+  background: var(--warm-white);
+  padding: 16px;
+  border-left: 3px solid var(--sage);
+}
+
+.pose-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.pose-duration {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.pose-note {
+  font-size: 0.8rem;
+  color: var(--text-mid);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.plan-day-note {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: rgba(135,146,126,0.08);
+  border-left: 3px solid var(--sage);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--text-mid);
+}
+
+/* ============ QUOTE STRIP ============ */
+.yoga-quote-strip {
+  background: var(--sage-dark);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.yoga-quote-strip p {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-style: italic;
+  color: rgba(255,255,255,0.9);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 1024px) {
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .plan-poses { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .yoga-intro { grid-template-columns: 1fr; gap: 40px; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .plan-poses { grid-template-columns: 1fr; }
+  .yoga-hero-content { padding: 40px 24px; }
+  .plan-day-header { padding: 16px 20px; }
+  .plan-day-body { padding: 0 20px 20px; }
+}
