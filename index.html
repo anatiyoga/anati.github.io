@@ -10,6 +10,7 @@
 </head>
 <body>
 
+  <script src="nav.js"></script>
 
   <!-- ============ HERO ============ -->
   <section class="hero">
@@ -34,10 +35,11 @@
 
     <div class="hero-image fade-in fade-in-delay-2">
       <div class="hero-img-wrap">
+        <!-- Replace src with your actual hero image: images/hero.png -->
         <img
-          src="images/hero-bg.jpg"
+          src="images/hero.png"
           alt="Meditation in nature — a serene moment of stillness"
-          onerror="this.src='https://images.unsplash.com/photo-15488885955-4c508f61de33?w=1200&q=80&fit=crop&crop=center'"
+          onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'>Place hero.png in /images/</div>'"
         />
       </div>
     </div>
@@ -59,19 +61,22 @@
 
       <div class="writings-grid mt-48">
 
+        <!-- Card 1 — Real Medium article -->
         <article class="card fade-in fade-in-delay-1">
           <div class="card-image">
-            <img src="https://miro.medium.com/v2/resize:fit:1200/1*UxaKhZ6kVS4fZNqhxYVcEQ.png" alt="Your Instagram Life" onerror="this.parentNode.innerHTML='<div class=img-placeholder>Awareness</div>'" />
+            <img src="images/post1.jpg" alt="The One Practice That Ends All Your Inner Battles"
+              onerror="this.parentNode.innerHTML='<div class=\'img-placeholder\'>post1.jpg</div>'" />
           </div>
           <div class="card-body">
             <p class="card-category">Awareness</p>
-            <h3 class="card-title">Your Instagram Life Isn't Real. Neither Is the Real One.</h3>
-            <p class="card-excerpt">We perform for the camera and call it living. But what lies beneath the         performance?</p>
-            <a href="https://medium.com/@anatiyoga/       your-instagram-life-isnt-real-neither-is-the-real-one-2210b273227c"
+            <h3 class="card-title">The One Practice That Ends All Your Inner Battles</h3>
+            <p class="card-excerpt">The fight with others? It started inside you.</p>
+            <a href="https://medium.com/@anatiyoga/the-one-practice-that-ends-all-your-inner-battles-e30cf65d4936"
                target="_blank" rel="noopener" class="read-more">Read more</a>
           </div>
         </article>
 
+        <!-- Card 2 — Real Medium article -->
         <article class="card fade-in fade-in-delay-2">
           <div class="card-image">
             <img src="https://miro.medium.com/v2/resize:fill:640:426/1*O98nztlA_ViF4uMURp--Jg.jpeg"
@@ -87,6 +92,7 @@
           </div>
         </article>
 
+        <!-- Card 3 — Real Medium article -->
         <article class="card fade-in fade-in-delay-3">
           <div class="card-image">
             <img src="https://miro.medium.com/v2/resize:fill:640:426/1*vUBk9GskYpOYV6-uIchLFQ@2x.jpeg"
@@ -102,6 +108,7 @@
           </div>
         </article>
 
+        <!-- Card 4 — Real Medium article -->
         <article class="card fade-in fade-in-delay-4">
           <div class="card-image">
             <img src="images/post4.jpg" alt="A Yogic Journey to Your Original Home"
@@ -120,47 +127,61 @@
     </div>
   </section>
 
+  <!-- ============ PHILOSOPHY STRIP ============ -->
   <section class="philosophy-strip">
     <div class="container">
-      <p class="philosophy-text">Living in alignment with truth and awareness.</p>
+      <p class="philosophy-text">
+        Living in alignment with truth and awareness.
+      </p>
       <div class="philosophy-line"></div>
     </div>
   </section>
 
+  <!-- ============ START YOUR JOURNEY ============ -->
   <section class="section" style="background: var(--beige);">
     <div class="container">
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-        <div>
-          <p class="label">From the Journal</p>
-          <h2 class="display-md mt-16" style="font-style: italic;">Short reflections.<br>Raw thoughts.</h2>
-          <div class="divider mt-24"></div>
-          <div class="journal-preview-items mt-32">
-            <div class="journal-preview-item">
-              <span class="journal-date">May 20, 2024</span>
-              <p>Some days the most spiritual thing is to just be a good human.</p>
-            </div>
-            <div class="journal-preview-item">
-              <span class="journal-date">May 18, 2024</span>
-              <p>Silence is not empty; it is full of answers.</p>
-            </div>
-            <div class="journal-preview-item">
-              <span class="journal-date">May 15, 2024</span>
-              <p>Letting go is not losing. It is making space for what is real.</p>
-            </div>
+      <div style="text-align:center; margin-bottom:56px;">
+        <p class="label">Start your journey</p>
+        <h2 class="display-md mt-16">Explore what ANATI offers</h2>
+        <div class="divider mt-20" style="margin-left:auto;margin-right:auto;"></div>
+      </div>
+      <div class="journey-cards">
+
+        <a href="yoga.html" class="journey-card">
+          <div class="journey-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&fit=crop&crop=center"
+              alt="Yoga — a path inward"
+              onerror="this.src='images/hero-bg.jpg'" />
+            <div class="journey-card-overlay"></div>
           </div>
-          <div class="mt-32">
-            <a href="journal.html" class="btn btn-outline">View all journal entries <span class="arrow-icon">→</span></a>
+          <div class="journey-card-body">
+            <span class="label" style="color:var(--sage);">Practice</span>
+            <h3 class="journey-card-title">Yoga</h3>
+            <p class="journey-card-desc">A 7-day mixed wellness plan, the philosophy of practice, and the deeper aspects of yoga beyond the posture.</p>
+            <span class="journey-card-link">Explore Yoga →</span>
           </div>
-        </div>
-        <div class="journal-image-wrap">
-          <img
-            src="images/philosophy-vase.jpg"
-            alt="Stillness in nature — a moment of quiet reflection"
-            onerror="this.src='https://images.unsplash.com/photo-1494400382845-dfc1df52bd3e?w=800&q=80&fit=crop'" />
-        </div>
+        </a>
+
+        <a href="nutrition.html" class="journey-card">
+          <div class="journey-card-image">
+            <img
+              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&q=80&fit=crop&crop=center"
+              alt="Nutrition — conscious eating"
+              onerror="this.src='images/post1.jpg'" />
+            <div class="journey-card-overlay"></div>
+          </div>
+          <div class="journey-card-body">
+            <span class="label" style="color:var(--sage);">Nourishment</span>
+            <h3 class="journey-card-title">Nutrition</h3>
+            <p class="journey-card-desc">BMI calculator, daily calorie needs, sample meal plans — and the philosophy of eating with awareness.</p>
+            <span class="journey-card-link">Explore Nutrition →</span>
+          </div>
+        </a>
+
       </div>
     </div>
   </section>
-  <script src="nav.js"></script>
+
 </body>
 </html>
